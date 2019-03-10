@@ -41,7 +41,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1248394692" green="0.77107788710000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
-                                <state key="normal" title="START">
+                                <state key="normal" title="RESTART">
                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
@@ -55,6 +55,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tissue" translatesAutoresizingMaskIntoConstraints="NO" id="rFe-Un-EoY">
+                                <rect key="frame" x="27" y="203" width="104" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tissue" translatesAutoresizingMaskIntoConstraints="NO" id="CRd-LY-ayp">
+                                <rect key="frame" x="174" y="203" width="104" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -72,6 +80,8 @@
                     <connections>
                         <outlet property="gifView" destination="VSd-eg-Pbx" id="D5h-VL-RRM"/>
                         <outlet property="statsLabel" destination="kbA-c6-gFm" id="oDw-np-R8i"/>
+                        <outlet property="trash1" destination="rFe-Un-EoY" id="x9C-M7-UwV"/>
+                        <outlet property="trash2" destination="CRd-LY-ayp" id="iM8-gS-9J9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,5 +92,6 @@
     <resources>
         <image name="car" width="330" height="248"/>
         <image name="movingroad.gif" width="500" height="500"/>
+        <image name="tissue" width="108" height="108"/>
     </resources>
 </document>

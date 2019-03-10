@@ -78,6 +78,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="car" destination="H03-y6-lgS" id="S84-SF-SNW"/>
                         <outlet property="gifView" destination="VSd-eg-Pbx" id="D5h-VL-RRM"/>
                         <outlet property="statsLabel" destination="kbA-c6-gFm" id="oDw-np-R8i"/>
                         <outlet property="trash1" destination="rFe-Un-EoY" id="x9C-M7-UwV"/>

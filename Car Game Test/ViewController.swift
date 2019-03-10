@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var trash1: UIImageView!
     @IBOutlet weak var trash2: UIImageView!
+    @IBOutlet weak var car: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,7 @@ class ViewController: UIViewController {
         trash2.isHidden = true
         self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
         
+        // MAIN TIMER GAME - IMPORTANT
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.time += 1
             print(self.time)
@@ -56,14 +58,17 @@ class ViewController: UIViewController {
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
             }
             
+            // TRASH MOVES DOWN + COLLISION WITH CAR
             if self.time % 2 == 0 {
                 self.trash1.isHidden = false
                 self.trash2.isHidden = false
-                
                 UIView.animate(withDuration: 1, animations: {
                     self.trash1.frame.origin.y += 300
                     self.trash2.frame.origin.y += 300
                 }, completion: { (_) in
+                    if (self.trash1.frame.intersects(self.car.frame)) || (self.trash2.frame.intersects(self.car.frame)){
+                        self.stopGame()
+                        }
                     self.trash1.isHidden = true
                     self.trash2.isHidden = true
                     self.trash1.frame.origin.y = 203.0
@@ -71,10 +76,13 @@ class ViewController: UIViewController {
                 })
             }
             
+            // FUEL RUNS OUT
             if self.fuel == 0 {
                 self.stopGame()
             }
         })
+        
+        // END OF TIMER
         
     }
     

@@ -55,12 +55,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tissue" translatesAutoresizingMaskIntoConstraints="NO" id="rFe-Un-EoY">
-                                <rect key="frame" x="27" y="203" width="104" height="117"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tissue" translatesAutoresizingMaskIntoConstraints="NO" id="rFe-Un-EoY">
+                                <rect key="frame" x="27" y="203" width="127" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tissue" translatesAutoresizingMaskIntoConstraints="NO" id="CRd-LY-ayp">
-                                <rect key="frame" x="174" y="203" width="104" height="117"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tissue" translatesAutoresizingMaskIntoConstraints="NO" id="CRd-LY-ayp">
+                                <rect key="frame" x="174" y="203" width="127" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

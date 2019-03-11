@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var pts = 0
     var time = 0
     var timer = Timer()
+    var secTimer = Timer()
     
     @IBOutlet weak var trash1: UIImageView!
     @IBOutlet weak var trash2: UIImageView!
@@ -39,13 +40,24 @@ class ViewController: UIViewController {
     }
     
     func moveCar() {
+        let leftSwipe1 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction(swipe:)))
+        leftSwipe1.direction = UISwipeGestureRecognizer.Direction.left
+        let leftSwipe2 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction(swipe:)))
+        leftSwipe2.direction = UISwipeGestureRecognizer.Direction.left
+        self.trash1.addGestureRecognizer(leftSwipe1)
+        self.trash2.addGestureRecognizer(leftSwipe2)
+        
         gifView.loadGif(name: "movingroad")
         
         fuel = 5
         pts = 0
         time = 0
-        trash1.isHidden = true
-        trash2.isHidden = true
+        
+        self.trash1.isHidden = true
+        self.trash2.isHidden = true
+        self.trash1.frame.origin.y = 203.0
+        self.trash2.frame.origin.y = 203.0
+        
         self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
         
         // MAIN TIMER GAME - IMPORTANT
@@ -58,21 +70,21 @@ class ViewController: UIViewController {
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
             }
             
+            
             // TRASH MOVES DOWN + COLLISION WITH CAR
             if self.time % 2 == 0 {
                 self.trash1.isHidden = false
                 self.trash2.isHidden = false
-                UIView.animate(withDuration: 1, animations: {
-                    self.trash1.frame.origin.y += 300
-                    self.trash2.frame.origin.y += 300
-                }, completion: { (_) in
+                self.secTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(_) in
+                    self.trash1.frame.origin.y += 1
+                    self.trash2.frame.origin.y += 1
                     if (self.trash1.frame.intersects(self.car.frame)) || (self.trash2.frame.intersects(self.car.frame)){
                         self.stopGame()
-                        }
-                    self.trash1.isHidden = true
-                    self.trash2.isHidden = true
-                    self.trash1.frame.origin.y = 203.0
-                    self.trash2.frame.origin.y = 203.0
+                        self.trash1.isHidden = true
+                        self.trash2.isHidden = true
+                        self.trash1.frame.origin.y = 203.0
+                        self.trash2.frame.origin.y = 203.0
+                    }
                 })
             }
             
@@ -88,7 +100,17 @@ class ViewController: UIViewController {
     
     func stopGame() {
         gifView.image = UIImage(named: "stoproad")
+        secTimer.invalidate()
         timer.invalidate()
+    }
+    
+    @objc func swipeAction(swipe:UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 2:
+            statsLabel.text = "BOOYAH"
+        default:
+            break
+        }
     }
 }
 

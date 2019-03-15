@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var time = 0
     var timer = Timer()
     var secTimer = Timer()
+    var secTimer2 = Timer()
     
     @IBOutlet weak var trash1: UIImageView!
     @IBOutlet weak var trash2: UIImageView!
@@ -40,12 +41,23 @@ class ViewController: UIViewController {
     }
     
     func moveCar() {
+        
+        // LEFT SWIPE
         let leftSwipe1 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction(swipe:)))
         leftSwipe1.direction = UISwipeGestureRecognizer.Direction.left
-        let leftSwipe2 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction(swipe:)))
+        let leftSwipe2 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction2(swipe:)))
         leftSwipe2.direction = UISwipeGestureRecognizer.Direction.left
         self.trash1.addGestureRecognizer(leftSwipe1)
         self.trash2.addGestureRecognizer(leftSwipe2)
+        
+        
+        // RIGHT SWIPE
+        let rightSwipe1 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction3(swipe:)))
+        rightSwipe1.direction = UISwipeGestureRecognizer.Direction.right
+        let rightSwipe2 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction4(swipe:)))
+        rightSwipe2.direction = UISwipeGestureRecognizer.Direction.right
+        self.trash1.addGestureRecognizer(rightSwipe1)
+        self.trash2.addGestureRecognizer(rightSwipe2)
         
         gifView.loadGif(name: "movingroad")
         
@@ -77,15 +89,22 @@ class ViewController: UIViewController {
                 self.trash2.isHidden = false
                 self.secTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(_) in
                     self.trash1.frame.origin.y += 1
-                    self.trash2.frame.origin.y += 1
-                    if (self.trash1.frame.intersects(self.car.frame)) || (self.trash2.frame.intersects(self.car.frame)){
+                    if (self.trash1.frame.intersects(self.car.frame)){
                         self.stopGame()
                         self.trash1.isHidden = true
-                        self.trash2.isHidden = true
                         self.trash1.frame.origin.y = 203.0
+                    }
+                })
+                
+                self.secTimer2 = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(_) in
+                    self.trash2.frame.origin.y += 1
+                    if (self.trash2.frame.intersects(self.car.frame)){
+                        self.stopGame()
+                        self.trash2.isHidden = true
                         self.trash2.frame.origin.y = 203.0
                     }
                 })
+                
             }
             
             // FUEL RUNS OUT
@@ -101,13 +120,104 @@ class ViewController: UIViewController {
     func stopGame() {
         gifView.image = UIImage(named: "stoproad")
         secTimer.invalidate()
+        secTimer2.invalidate()
         timer.invalidate()
     }
     
+    // LEFT SWIPES
+    // TRASH 1
     @objc func swipeAction(swipe:UISwipeGestureRecognizer) {
         switch swipe.direction.rawValue {
         case 2:
-            statsLabel.text = "BOOYAH"
+            // Left
+            let trash1Current = trash1.image!.pngData()
+
+            if trash1Current == UIImage(named: "battery")?.pngData() ||
+                trash1Current == UIImage(named: "tissue")?.pngData(){
+                pts += 25
+                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
+                self.trash1.isHidden = true
+                self.trash1.frame.origin.y = 203.0
+                self.secTimer.invalidate()
+                
+            } else {
+                stopGame()
+            }
+            
+        default:
+            break
+        }
+    }
+    
+    // TRASH2
+    @objc func swipeAction2(swipe:UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 2:
+            // Left
+            let trash2Current = trash2.image!.pngData()
+            
+            if trash2Current == UIImage(named: "battery")?.pngData() ||
+                trash2Current == UIImage(named: "tissue")?.pngData(){
+                pts += 25
+                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
+                self.trash2.isHidden = true
+                self.trash2.frame.origin.y = 203.0
+                self.secTimer2.invalidate()
+                
+            } else {
+                stopGame()
+            }
+            
+        default:
+            break
+        }
+    }
+    
+    // RIGHT SWIPES
+    
+    // TRASH1
+    @objc func swipeAction3(swipe:UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            // Right
+            let trash1Current = trash1.image!.pngData()
+            
+            if trash1Current == UIImage(named: "cardboard")?.pngData() ||
+                trash1Current == UIImage(named: "bag")?.pngData(){
+                pts += 25
+                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
+                self.trash1.isHidden = true
+                self.trash1.frame.origin.y = 203.0
+                self.secTimer.invalidate()
+                
+            } else {
+                stopGame()
+            }
+            
+        default:
+            break
+        }
+    }
+    
+    // TRASH2
+    @objc func swipeAction4(swipe:UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            // Right
+            let trash2Current = trash2.image!.pngData()
+            
+            if trash2Current == UIImage(named: "cardboard")?.pngData() ||
+                trash2Current == UIImage(named: "bag")?.pngData(){
+                pts += 25
+                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
+                self.trash2.isHidden = true
+                self.trash2.frame.origin.y = 203.0
+                self.secTimer2.invalidate()
+                
+            } else {
+                stopGame()
+            }
+            
         default:
             break
         }

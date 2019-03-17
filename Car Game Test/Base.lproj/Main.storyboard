@@ -60,10 +60,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tissue" translatesAutoresizingMaskIntoConstraints="NO" id="CRd-LY-ayp">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="battery" translatesAutoresizingMaskIntoConstraints="NO" id="CRd-LY-ayp">
                                 <rect key="frame" x="174" y="203" width="127" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYX-Tf-0oE">
+                                <rect key="frame" x="13" y="198" width="141" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="gas"/>
+                                <connections>
+                                    <segue destination="DTL-sc-g2f" kind="presentation" identifier="minigame" id="uXK-pq-3by"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -80,6 +88,7 @@
                     </view>
                     <connections>
                         <outlet property="car" destination="H03-y6-lgS" id="S84-SF-SNW"/>
+                        <outlet property="fuelStation" destination="pYX-Tf-0oE" id="LYK-O2-zFh"/>
                         <outlet property="gifView" destination="VSd-eg-Pbx" id="D5h-VL-RRM"/>
                         <outlet property="statsLabel" destination="kbA-c6-gFm" id="oDw-np-R8i"/>
                         <outlet property="trash1" destination="rFe-Un-EoY" id="x9C-M7-UwV"/>
@@ -90,11 +99,27 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
+        <!--Minigame View Controller-->
+        <scene sceneID="Kus-Gr-wp0">
+            <objects>
+                <viewController id="DTL-sc-g2f" customClass="MinigameViewController" customModule="Car_Game_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k9m-VF-L7l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="c0q-pg-KJ5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JB5-NG-aEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="133"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bag" width="210" height="250"/>
+        <image name="battery" width="151.5" height="121.5"/>
         <image name="car" width="330" height="248"/>
+        <image name="gas" width="384" height="384"/>
         <image name="movingroad.gif" width="500" height="500"/>
-        <image name="tissue" width="108" height="108"/>
     </resources>
 </document>

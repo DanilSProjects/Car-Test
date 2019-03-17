@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var trash1: UIImageView!
     @IBOutlet weak var trash2: UIImageView!
     @IBOutlet weak var car: UIImageView!
+    @IBOutlet weak var fuelStation: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,12 +69,13 @@ class ViewController: UIViewController {
         
         gifView.loadGif(name: "movingroad")
         
-        fuel = 5
+        fuel = 2
         pts = 0
         time = 0
         
         self.trash1.isHidden = true
         self.trash2.isHidden = true
+        self.fuelStation.isHidden = true
         self.trash1.frame.origin.y = 203.0
         self.trash2.frame.origin.y = 203.0
         
@@ -98,7 +100,7 @@ class ViewController: UIViewController {
                 
                 self.trash1.isHidden = false
                 self.trash2.isHidden = false
-                self.secTimer = Timer.scheduledTimer(withTimeInterval: 0.015, repeats: true, block: {(_) in
+                self.secTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(_) in
                     self.trash1.frame.origin.y += 1
                     if (self.trash1.frame.intersects(self.car.frame)){
                         self.stopGame()
@@ -107,7 +109,7 @@ class ViewController: UIViewController {
                     }
                 })
                 
-                self.secTimer2 = Timer.scheduledTimer(withTimeInterval: 0.015, repeats: true, block: {(_) in
+                self.secTimer2 = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(_) in
                     self.trash2.frame.origin.y += 1
                     if (self.trash2.frame.intersects(self.car.frame)){
                         self.stopGame()
@@ -116,6 +118,15 @@ class ViewController: UIViewController {
                     }
                 })
                 
+            }
+            
+            // GAS GAS GAS
+            
+            if self.fuel > 1 {
+                self.fuelStation.isHidden = true
+            } else {
+                self.fuelStation.isHidden = false
+                self.stopGame()
             }
             
             // FUEL RUNS OUT

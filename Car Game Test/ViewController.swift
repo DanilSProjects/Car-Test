@@ -20,6 +20,13 @@ class ViewController: UIViewController {
     var secTimer = Timer()
     var secTimer2 = Timer()
     
+    var leftSwipe1 = UISwipeGestureRecognizer()
+    var leftSwipe2 = UISwipeGestureRecognizer()
+    var rightSwipe1 = UISwipeGestureRecognizer()
+    var rightSwipe2 = UISwipeGestureRecognizer()
+    
+    var images = ["cardboard", "tissue", "bag", "battery"]
+    
     @IBOutlet weak var trash1: UIImageView!
     @IBOutlet weak var trash2: UIImageView!
     @IBOutlet weak var car: UIImageView!
@@ -43,18 +50,18 @@ class ViewController: UIViewController {
     func moveCar() {
         
         // LEFT SWIPE
-        let leftSwipe1 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction(swipe:)))
+        leftSwipe1 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction(swipe:)))
         leftSwipe1.direction = UISwipeGestureRecognizer.Direction.left
-        let leftSwipe2 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction2(swipe:)))
+        leftSwipe2 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction2(swipe:)))
         leftSwipe2.direction = UISwipeGestureRecognizer.Direction.left
         self.trash1.addGestureRecognizer(leftSwipe1)
         self.trash2.addGestureRecognizer(leftSwipe2)
         
         
         // RIGHT SWIPE
-        let rightSwipe1 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction3(swipe:)))
+        rightSwipe1 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction3(swipe:)))
         rightSwipe1.direction = UISwipeGestureRecognizer.Direction.right
-        let rightSwipe2 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction4(swipe:)))
+        rightSwipe2 = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction4(swipe:)))
         rightSwipe2.direction = UISwipeGestureRecognizer.Direction.right
         self.trash1.addGestureRecognizer(rightSwipe1)
         self.trash2.addGestureRecognizer(rightSwipe2)
@@ -85,9 +92,13 @@ class ViewController: UIViewController {
             
             // TRASH MOVES DOWN + COLLISION WITH CAR
             if self.time % 2 == 0 {
+                
+                self.trash1.image = UIImage(named: self.images[Int.random(in:0 ... 3)])
+                self.trash2.image = UIImage(named: self.images[Int.random(in:0 ... 3)])
+                
                 self.trash1.isHidden = false
                 self.trash2.isHidden = false
-                self.secTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(_) in
+                self.secTimer = Timer.scheduledTimer(withTimeInterval: 0.015, repeats: true, block: {(_) in
                     self.trash1.frame.origin.y += 1
                     if (self.trash1.frame.intersects(self.car.frame)){
                         self.stopGame()
@@ -96,7 +107,7 @@ class ViewController: UIViewController {
                     }
                 })
                 
-                self.secTimer2 = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(_) in
+                self.secTimer2 = Timer.scheduledTimer(withTimeInterval: 0.015, repeats: true, block: {(_) in
                     self.trash2.frame.origin.y += 1
                     if (self.trash2.frame.intersects(self.car.frame)){
                         self.stopGame()
@@ -122,6 +133,11 @@ class ViewController: UIViewController {
         secTimer.invalidate()
         secTimer2.invalidate()
         timer.invalidate()
+        
+        trash1.removeGestureRecognizer(leftSwipe1)
+        trash1.removeGestureRecognizer(rightSwipe1)
+        trash2.removeGestureRecognizer(leftSwipe2)
+        trash2.removeGestureRecognizer(rightSwipe2)
     }
     
     // LEFT SWIPES

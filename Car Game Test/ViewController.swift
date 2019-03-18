@@ -161,6 +161,7 @@ class ViewController: UIViewController {
         secTimer2.invalidate()
         timer.invalidate()
         
+        fuelStation.isHidden = true
         trash1.removeGestureRecognizer(leftSwipe1)
         trash1.removeGestureRecognizer(rightSwipe1)
         trash2.removeGestureRecognizer(leftSwipe2)

@@ -69,6 +69,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="gas"/>
                                 <connections>
+                                    <action selector="fuelTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKg-gf-dt9"/>
                                     <segue destination="DTL-sc-g2f" kind="presentation" identifier="minigame" id="uXK-pq-3by"/>
                                 </connections>
                             </button>
@@ -106,13 +107,43 @@
                     <view key="view" contentMode="scaleToFill" id="k9m-VF-L7l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zr-XL-h9l">
+                                <rect key="frame" x="105" y="437" width="178" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="DTL-sc-g2f" eventType="touchUpInside" id="dwj-Ew-Msq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN1-B4-hM6">
+                                <rect key="frame" x="105" y="99" width="164" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="fuel"/>
+                                <connections>
+                                    <action selector="fuelButton:" destination="DTL-sc-g2f" eventType="touchUpInside" id="8EE-8l-Way"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNZ-ie-OdG">
+                                <rect key="frame" x="105" y="234" width="162" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="pts"/>
+                                <connections>
+                                    <action selector="ptsButton:" destination="DTL-sc-g2f" eventType="touchUpInside" id="rtR-sH-PvX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="c0q-pg-KJ5"/>
                     </view>
+                    <connections>
+                        <segue destination="yBc-V7-7oW" kind="unwind" identifier="unwind" unwindAction="unwindToVC1WithSegue:" id="PZP-am-tkm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JB5-NG-aEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yBc-V7-7oW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="908" y="133"/>
+            <point key="canvasLocation" x="908" y="132.68365817091455"/>
         </scene>
     </scenes>
     <resources>

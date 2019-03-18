@@ -8,12 +8,14 @@
 
 import UIKit
 
+var fuel = 5
+var totalPts = 0
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var gifView: UIImageView!
     @IBOutlet weak var statsLabel: UILabel!
     
-    var fuel = 5
     var pts = 0
     var time = 0
     var timer = Timer()
@@ -34,13 +36,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fuelStation.isHidden = true
         statsLabel.text = "POINTS: \(pts) FUEL: \(fuel)L"
+        fuel = 5
+        pts = 0
+        time = 0
         moveCar()
-        
     }
 
 
     @IBAction func startButton(_ sender: Any) {
+        fuel = 5
+        pts = 0
+        time = 0
         moveCar()
     }
     
@@ -69,17 +77,13 @@ class ViewController: UIViewController {
         
         gifView.loadGif(name: "movingroad")
         
-        fuel = 2
-        pts = 0
-        time = 0
-        
         self.trash1.isHidden = true
         self.trash2.isHidden = true
         self.fuelStation.isHidden = true
         self.trash1.frame.origin.y = 203.0
         self.trash2.frame.origin.y = 203.0
         
-        self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
+        self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
         
         // MAIN TIMER GAME - IMPORTANT
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
@@ -87,8 +91,8 @@ class ViewController: UIViewController {
             print(self.time)
             if self.time % 5 == 0 {
                 self.pts += 50
-                self.fuel -= 1
-                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
+                fuel -= 1
+                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
             }
             
             
@@ -122,15 +126,14 @@ class ViewController: UIViewController {
             
             // GAS GAS GAS
             
-            if self.fuel > 1 {
+            if fuel > 1 {
                 self.fuelStation.isHidden = true
             } else {
                 self.fuelStation.isHidden = false
-                self.stopGame()
             }
             
             // FUEL RUNS OUT
-            if self.fuel == 0 {
+            if fuel == 0 {
                 self.stopGame()
             }
         })
@@ -139,7 +142,20 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func fuelTapped(_ sender: Any) {
+        gifView.image = UIImage(named: "stoproad")
+        secTimer.invalidate()
+        secTimer2.invalidate()
+        timer.invalidate()
+        
+        trash1.removeGestureRecognizer(leftSwipe1)
+        trash1.removeGestureRecognizer(rightSwipe1)
+        trash2.removeGestureRecognizer(leftSwipe2)
+        trash2.removeGestureRecognizer(rightSwipe2)
+    }
+    
     func stopGame() {
+        totalPts += pts
         gifView.image = UIImage(named: "stoproad")
         secTimer.invalidate()
         secTimer2.invalidate()
@@ -162,7 +178,7 @@ class ViewController: UIViewController {
             if trash1Current == UIImage(named: "battery")?.pngData() ||
                 trash1Current == UIImage(named: "tissue")?.pngData(){
                 pts += 25
-                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
+                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash1.isHidden = true
                 self.trash1.frame.origin.y = 203.0
                 self.secTimer.invalidate()
@@ -186,7 +202,7 @@ class ViewController: UIViewController {
             if trash2Current == UIImage(named: "battery")?.pngData() ||
                 trash2Current == UIImage(named: "tissue")?.pngData(){
                 pts += 25
-                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
+                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash2.isHidden = true
                 self.trash2.frame.origin.y = 203.0
                 self.secTimer2.invalidate()
@@ -212,7 +228,7 @@ class ViewController: UIViewController {
             if trash1Current == UIImage(named: "cardboard")?.pngData() ||
                 trash1Current == UIImage(named: "bag")?.pngData(){
                 pts += 25
-                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
+                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash1.isHidden = true
                 self.trash1.frame.origin.y = 203.0
                 self.secTimer.invalidate()
@@ -236,7 +252,7 @@ class ViewController: UIViewController {
             if trash2Current == UIImage(named: "cardboard")?.pngData() ||
                 trash2Current == UIImage(named: "bag")?.pngData(){
                 pts += 25
-                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(self.fuel)"
+                self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash2.isHidden = true
                 self.trash2.frame.origin.y = 203.0
                 self.secTimer2.invalidate()
@@ -248,6 +264,17 @@ class ViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    
+    /*
+     
+     MARK: Navigation
+     
+ */
+    
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
+        moveCar()
     }
 }
 

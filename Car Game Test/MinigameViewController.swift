@@ -9,7 +9,9 @@
 import UIKit
 
 class MinigameViewController: UIViewController {
-
+    
+    var ptsEarned = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,4 +29,20 @@ class MinigameViewController: UIViewController {
     }
     */
 
+    @IBAction func fuelButton(_ sender: Any) {
+        fuel = 10
+    }
+    @IBAction func ptsButton(_ sender: Any) {
+        ptsEarned = 1000
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwind" {
+            let destination = segue.destination as! ViewController
+            destination.pts += ptsEarned
+        }
+    }
+    @IBAction func backButton(_ sender: Any) {
+        performSegue(withIdentifier: "unwind", sender: self)
+    }
 }

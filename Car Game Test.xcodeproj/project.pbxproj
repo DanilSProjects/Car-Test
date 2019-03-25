@@ -16,6 +16,7 @@
 		650EF3392234EAC200174B40 /* movingroad.gif in Resources */ = {isa = PBXBuildFile; fileRef = 650EF3382234EAC200174B40 /* movingroad.gif */; };
 		65354139223FC55400FEDB60 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65354138223FC55400FEDB60 /* Trash.swift */; };
 		6551E0E3223E763F009A50C3 /* MinigameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551E0E2223E763F009A50C3 /* MinigameViewController.swift */; };
+		655B23142248E03800FEEC3B /* FuelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B23132248E03800FEEC3B /* FuelTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		650EF3382234EAC200174B40 /* movingroad.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = movingroad.gif; sourceTree = "<group>"; };
 		65354138223FC55400FEDB60 /* Trash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
 		6551E0E2223E763F009A50C3 /* MinigameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinigameViewController.swift; sourceTree = "<group>"; };
+		655B23132248E03800FEEC3B /* FuelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				65354138223FC55400FEDB60 /* Trash.swift */,
 				6551E0E2223E763F009A50C3 /* MinigameViewController.swift */,
 				650EF3262234E8CD00174B40 /* ViewController.swift */,
+				655B23132248E03800FEEC3B /* FuelTableViewController.swift */,
 				650EF3382234EAC200174B40 /* movingroad.gif */,
 				650EF32B2234E8CF00174B40 /* Assets.xcassets */,
 				650EF32D2234E8CF00174B40 /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 				6551E0E3223E763F009A50C3 /* MinigameViewController.swift in Sources */,
 				650EF3372234E9E600174B40 /* Swift+GIF.swift in Sources */,
 				650EF3252234E8CD00174B40 /* AppDelegate.swift in Sources */,
+				655B23142248E03800FEEC3B /* FuelTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

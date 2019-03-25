@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var statsLabel: UILabel!
     
     var pts = 0
+    var ptsToIncrease = 0
     var time = 0
     var timer = Timer()
     var secTimer = Timer()
@@ -40,6 +41,15 @@ class ViewController: UIViewController {
         statsLabel.text = "POINTS: \(pts) FUEL: \(fuel)L"
         fuel = 5
         pts = 0
+        
+        switch fuelType {
+        case 0:
+            ptsToIncrease = 50
+        case 1:
+            ptsToIncrease = 75
+        default:
+            print("Something's gone wrong HQ")
+        }
         time = 0
         moveCar()
     }
@@ -90,7 +100,7 @@ class ViewController: UIViewController {
             self.time += 1
             print(self.time)
             if self.time % 5 == 0 {
-                self.pts += 50
+                self.pts += self.ptsToIncrease
                 fuel -= 1
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
             }
@@ -178,7 +188,7 @@ class ViewController: UIViewController {
 
             if trash1Current == UIImage(named: "battery")?.pngData() ||
                 trash1Current == UIImage(named: "tissue")?.pngData(){
-                pts += 25
+                pts += ptsToIncrease - 25
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash1.isHidden = true
                 self.trash1.frame.origin.y = 203.0
@@ -202,7 +212,7 @@ class ViewController: UIViewController {
             
             if trash2Current == UIImage(named: "battery")?.pngData() ||
                 trash2Current == UIImage(named: "tissue")?.pngData(){
-                pts += 25
+                pts += ptsToIncrease - 25
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash2.isHidden = true
                 self.trash2.frame.origin.y = 203.0
@@ -228,7 +238,7 @@ class ViewController: UIViewController {
             
             if trash1Current == UIImage(named: "cardboard")?.pngData() ||
                 trash1Current == UIImage(named: "bag")?.pngData(){
-                pts += 25
+                pts += ptsToIncrease - 25
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash1.isHidden = true
                 self.trash1.frame.origin.y = 203.0
@@ -252,7 +262,7 @@ class ViewController: UIViewController {
             
             if trash2Current == UIImage(named: "cardboard")?.pngData() ||
                 trash2Current == UIImage(named: "bag")?.pngData(){
-                pts += 25
+                pts += ptsToIncrease - 25
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash2.isHidden = true
                 self.trash2.frame.origin.y = 203.0

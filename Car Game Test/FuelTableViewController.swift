@@ -11,13 +11,30 @@ import UIKit
 var fuelType = 0
 class FuelTableViewController: UITableViewController {
 
+    @IBOutlet var mainTable: UITableView!
+    
     @IBOutlet weak var choosePetrol: UIButton!
     @IBOutlet weak var chooseBio: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainTable.allowsSelection = false
         choosePetrol.layer.cornerRadius = 5
         chooseBio.layer.cornerRadius = 5
+        if totalPts > 999 {
+            chooseBio.isUserInteractionEnabled = true
+            
+            chooseBio.setTitle("CHOOSE", for: .normal)
+            chooseBio.backgroundColor = UIColor(red:0.36, green:0.71, blue:1.00, alpha:1.0)
+            chooseBio.setTitleColor(UIColor(red:1.00, green:1.00, blue:0.94, alpha:1.0), for: .normal)
+        } else {
+            chooseBio.isUserInteractionEnabled = false
+            
+            chooseBio.setTitle("NOT ENOUGH", for: .normal)
+            chooseBio.backgroundColor = UIColor(red:0.67, green:0.67, blue:0.67, alpha:1.0)
+            chooseBio.titleLabel?.font = UIFont(name: "Chalkduster", size: 18)
+            chooseBio.setTitleColor(UIColor(red:0.83, green:0.03, blue:0.02, alpha:1.0), for: .normal)
+        }
     }
 
     // MARK: - Table view data source
@@ -37,6 +54,7 @@ class FuelTableViewController: UITableViewController {
     }
     
     @IBAction func biofuel(_ sender: Any) {
+        totalPts -= 1000
         fuelType = 1
     }
     /*

@@ -10,21 +10,25 @@ import UIKit
 
 class TutorialViewController: UIViewController {
 
+    @IBOutlet weak var cardboardBox: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+       let swipe = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeAction(swipe:)))
+        swipe.direction = UISwipeGestureRecognizer.Direction.right
+        self.cardboardBox.addGestureRecognizer(swipe)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func swipeAction(swipe:UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            performSegue(withIdentifier: "tutNext1", sender: nil)
+            
+        default:
+            break
+        }
     }
-    */
 
 }

@@ -22,6 +22,7 @@
 		65502A2922539DD500A5F22D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65502A2822539DD500A5F22D /* SettingsTableViewController.swift */; };
 		6551E0E3223E763F009A50C3 /* MinigameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551E0E2223E763F009A50C3 /* MinigameViewController.swift */; };
 		655B23142248E03800FEEC3B /* FuelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B23132248E03800FEEC3B /* FuelTableViewController.swift */; };
+		65F5EDA0225B8F66001B91D8 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F5ED9F225B8F66001B91D8 /* CustomAlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		65502A2822539DD500A5F22D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6551E0E2223E763F009A50C3 /* MinigameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinigameViewController.swift; sourceTree = "<group>"; };
 		655B23132248E03800FEEC3B /* FuelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTableViewController.swift; sourceTree = "<group>"; };
+		65F5ED9F225B8F66001B91D8 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				650EF3242234E8CD00174B40 /* AppDelegate.swift */,
 				650EF3362234E9E600174B40 /* Swift+GIF.swift */,
+				65F5ED9F225B8F66001B91D8 /* CustomAlertViewController.swift */,
 				650EF3282234E8CD00174B40 /* Main.storyboard */,
 				6512A9B1225902EF00DB6447 /* TutorialFinalViewController.swift */,
 				6512A9AF2259018900DB6447 /* TutorialFuelViewController.swift */,
@@ -174,6 +177,7 @@
 				650EF3372234E9E600174B40 /* Swift+GIF.swift in Sources */,
 				65502A2522539D0500A5F22D /* MainMenuViewController.swift in Sources */,
 				650EF3252234E8CD00174B40 /* AppDelegate.swift in Sources */,
+				65F5EDA0225B8F66001B91D8 /* CustomAlertViewController.swift in Sources */,
 				655B23142248E03800FEEC3B /* FuelTableViewController.swift in Sources */,
 				65502A2922539DD500A5F22D /* SettingsTableViewController.swift in Sources */,
 				6512A9B2225902EF00DB6447 /* TutorialFinalViewController.swift in Sources */,

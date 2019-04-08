@@ -176,6 +176,11 @@ class ViewController: UIViewController {
         trash1.removeGestureRecognizer(rightSwipe1)
         trash2.removeGestureRecognizer(leftSwipe2)
         trash2.removeGestureRecognizer(rightSwipe2)
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertViewController") as! CustomAlertViewController
+        vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        self.addChild(vc)
+        self.view.addSubview(vc.view)
     }
     
     // LEFT SWIPES

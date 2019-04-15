@@ -1033,6 +1033,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UCu-1F-hgR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bfB-6Z-dbx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -1107,11 +1108,11 @@
         <!--Cars-->
         <scene sceneID="tsF-aP-iQ3">
             <objects>
-                <tableViewController id="TDD-9o-W87" sceneMemberID="viewController">
+                <tableViewController id="TDD-9o-W87" customClass="CarsUpgradeTableViewController" customModule="Car_Game_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kIy-Tg-KMr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="6An-Un-aUj">
                                 <cells>
@@ -1161,12 +1162,13 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF6-k6-RFE">
                                                     <rect key="frame" x="191" y="94" width="148" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
-                                                    <state key="normal" title="CHOSEN">
+                                                    <color key="backgroundColor" red="0.35686274509803922" green="0.69803921568627447" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                                    <state key="normal" title="BUY">
                                                         <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="buyMissan:" destination="TDD-9o-W87" eventType="touchUpInside" id="T7F-d8-Xqq"/>
                                                         <action selector="pPress:" destination="Nk5-S2-wVF" eventType="touchUpInside" id="Nev-3D-Job"/>
                                                     </connections>
                                                 </button>
@@ -1219,18 +1221,19 @@
                                                     <rect key="frame" x="187" y="149" width="148" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.35524772360000001" green="0.69778595990000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                                     <state key="normal" title="BUY">
                                                         <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="buyLazus:" destination="TDD-9o-W87" eventType="touchUpInside" id="nvi-QW-aa4"/>
                                                         <action selector="pPress:" destination="Nk5-S2-wVF" eventType="touchUpInside" id="voe-Af-mCP"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5,000 POINTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKN-N9-xYf">
-                                                    <rect key="frame" x="12" y="157" width="158" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5,000 POINTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKN-N9-xYf">
+                                                    <rect key="frame" x="5" y="157" width="173" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1274,25 +1277,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10,000 POINTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vC5-w7-XPY">
-                                                    <rect key="frame" x="5" y="155" width="172" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejp-No-yLY">
                                                     <rect key="frame" x="187" y="155" width="148" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="0.35524772360000001" green="0.69778595990000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
-                                                    <state key="normal" title="NOT ENOUGH">
+                                                    <state key="normal" title="BUY">
                                                         <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="buyTexla:" destination="TDD-9o-W87" eventType="touchUpInside" id="8ty-8l-Q7h"/>
                                                         <action selector="pPress:" destination="Nk5-S2-wVF" eventType="touchUpInside" id="Xxg-XN-sYt"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10,000 POINTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vC5-w7-XPY">
+                                                    <rect key="frame" x="0.0" y="155" width="188" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1314,6 +1318,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="pPress:" destination="Nk5-S2-wVF" eventType="touchUpInside" id="aaQ-Zl-fRS"/>
+                                                        <segue destination="Jf7-Sy-xxU" kind="presentation" id="CYs-1J-83C"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1329,6 +1334,15 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Cars" image="sports-car" selectedImage="sports-car" id="Qjm-f9-lCp"/>
+                    <connections>
+                        <outlet property="lazusButton" destination="woR-oX-vob" id="jW0-6B-4k3"/>
+                        <outlet property="lazusDesc" destination="hKN-N9-xYf" id="bXu-E4-LSe"/>
+                        <outlet property="mainTable" destination="kIy-Tg-KMr" id="vpC-VR-Xva"/>
+                        <outlet property="missanButton" destination="NF6-k6-RFE" id="Zwr-v6-mv4"/>
+                        <outlet property="texlaButton" destination="ejp-No-yLY" id="I0z-fl-mJu"/>
+                        <outlet property="texlaDesc" destination="vC5-w7-XPY" id="NaE-os-AT3"/>
+                        <outlet property="totalPtsLabel" destination="9OI-NP-bX4" id="09j-5w-NdF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFk-o2-Kj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1360,6 +1374,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="JLM-if-Sqm"/>
         <segue reference="gKH-5r-FNo"/>
-        <segue reference="Owl-EL-Hlc"/>
+        <segue reference="CYs-1J-83C"/>
     </inferredMetricsTieBreakers>
 </document>

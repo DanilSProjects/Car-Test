@@ -244,6 +244,7 @@
                         <outlet property="chooseBio" destination="bHg-eS-C7h" id="u6d-9C-WIR"/>
                         <outlet property="choosePetrol" destination="kSZ-J0-Y72" id="4hI-rg-a5R"/>
                         <outlet property="mainTable" destination="HW1-YB-oq1" id="Brj-cu-JWF"/>
+                        <outlet property="pointsLabel" destination="dkx-Fb-qm3" id="jeh-09-D55"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxJ-l5-mfL" userLabel="First Responder" sceneMemberID="firstResponder"/>

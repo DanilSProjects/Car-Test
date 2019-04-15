@@ -15,9 +15,11 @@ class FuelTableViewController: UITableViewController {
     
     @IBOutlet weak var choosePetrol: UIButton!
     @IBOutlet weak var chooseBio: UIButton!
+    @IBOutlet weak var pointsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pointsLabel.text = "Points: \(totalPts)"
         mainTable.allowsSelection = false
         choosePetrol.layer.cornerRadius = 5
         chooseBio.layer.cornerRadius = 5

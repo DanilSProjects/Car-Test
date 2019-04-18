@@ -1,17 +1,17 @@
 //
-//  CarsUpgradeTableViewController.swift
+//  GasTankTableViewController.swift
 //  Car Game Test
 //
-//  Created by Daniel on 15/4/19.
+//  Created by Daniel on 17/4/19.
 //  Copyright © 2019 Placeholder Interactive. All rights reserved.
 //
 
 import UIKit
-var equippedCar = "missan"
-class CarsUpgradeTableViewController: UITableViewController {
+
+class GasTankTableViewController: UITableViewController {
     @IBOutlet var mainTable: UITableView!
     
-    
+    var equippedGasTank = "missan"
     
     @IBOutlet weak var totalPtsLabel: UILabel!
     @IBOutlet weak var missanButton: UIButton!
@@ -25,7 +25,7 @@ class CarsUpgradeTableViewController: UITableViewController {
     var haveTexla = false
     
     var lazusPts = 25
-    var texlaPts = 50
+    var texlaPts = 25
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +33,14 @@ class CarsUpgradeTableViewController: UITableViewController {
         mainTable.allowsSelection = false
         checkForEquipped()
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 7
@@ -49,7 +49,6 @@ class CarsUpgradeTableViewController: UITableViewController {
     func checkForEquipped() {
         
         // IF ELSE FOR TOTALPTS CAR BUTTON SHOWINGSGINGS
-        
         if totalPts < lazusPts {
             lazusButton.backgroundColor = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0)
             lazusButton.setTitle("NOT ENOUGH", for: .normal)
@@ -60,9 +59,8 @@ class CarsUpgradeTableViewController: UITableViewController {
         }
         
         
-        
         // SWITCH FOR EQUIPPED CAR BUTTON SHOWINGSGINGS
-        switch equippedCar {
+        switch equippedGasTank {
         case "missan":
             // MAIN
             missanButton.backgroundColor = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0)
@@ -115,53 +113,53 @@ class CarsUpgradeTableViewController: UITableViewController {
             print("Somethin's wrong with the cars, sir.")
         }
     }
-
+    
     /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+     
+     // Configure the cell...
+     
+     return cell
+     }
+     */
+    
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
     /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     } else if editingStyle == .insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
     /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     
+     }
+     */
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+     // Override to support conditional rearranging of the table view.
+     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
     @IBAction func buyMissan(_ sender: Any) {
-            equippedCar = "missan"
+        equippedGasTank = "missan"
         checkForEquipped()
     }
     
@@ -170,7 +168,7 @@ class CarsUpgradeTableViewController: UITableViewController {
             if haveLazus == false {
                 totalPts -= lazusPts
             }
-            equippedCar = "lazus"
+            equippedGasTank = "lazus"
             haveLazus = true
             lazusDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
@@ -183,7 +181,7 @@ class CarsUpgradeTableViewController: UITableViewController {
             if haveTexla == false {
                 totalPts -= texlaPts
             }
-            equippedCar = "texla"
+            equippedGasTank = "texla"
             haveTexla = true
             texlaDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
@@ -191,13 +189,13 @@ class CarsUpgradeTableViewController: UITableViewController {
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

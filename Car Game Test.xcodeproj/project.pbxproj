@@ -23,6 +23,7 @@
 		6551E0E3223E763F009A50C3 /* MinigameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551E0E2223E763F009A50C3 /* MinigameViewController.swift */; };
 		655B23142248E03800FEEC3B /* FuelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B23132248E03800FEEC3B /* FuelTableViewController.swift */; };
 		658CCC3E22648A7C00F7303F /* CarsUpgradeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658CCC3D22648A7C00F7303F /* CarsUpgradeTableViewController.swift */; };
+		65E76EB82267605C00681DCE /* GasTankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E76EB72267605C00681DCE /* GasTankTableViewController.swift */; };
 		65F5EDA0225B8F66001B91D8 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F5ED9F225B8F66001B91D8 /* CustomAlertViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		6551E0E2223E763F009A50C3 /* MinigameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinigameViewController.swift; sourceTree = "<group>"; };
 		655B23132248E03800FEEC3B /* FuelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTableViewController.swift; sourceTree = "<group>"; };
 		658CCC3D22648A7C00F7303F /* CarsUpgradeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsUpgradeTableViewController.swift; sourceTree = "<group>"; };
+		65E76EB72267605C00681DCE /* GasTankTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasTankTableViewController.swift; sourceTree = "<group>"; };
 		65F5ED9F225B8F66001B91D8 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				65F5ED9F225B8F66001B91D8 /* CustomAlertViewController.swift */,
 				658CCC3D22648A7C00F7303F /* CarsUpgradeTableViewController.swift */,
 				650EF3282234E8CD00174B40 /* Main.storyboard */,
+				65E76EB72267605C00681DCE /* GasTankTableViewController.swift */,
 				6512A9B1225902EF00DB6447 /* TutorialFinalViewController.swift */,
 				6512A9AF2259018900DB6447 /* TutorialFuelViewController.swift */,
 				65502A2622539DCA00A5F22D /* TutorialViewController.swift */,
@@ -184,6 +187,7 @@
 				655B23142248E03800FEEC3B /* FuelTableViewController.swift in Sources */,
 				65502A2922539DD500A5F22D /* SettingsTableViewController.swift in Sources */,
 				658CCC3E22648A7C00F7303F /* CarsUpgradeTableViewController.swift in Sources */,
+				65E76EB82267605C00681DCE /* GasTankTableViewController.swift in Sources */,
 				6512A9B2225902EF00DB6447 /* TutorialFinalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

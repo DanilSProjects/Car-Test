@@ -1,14 +1,15 @@
 //
-//  GasTankTableViewController.swift
+//  EngineTableViewController.swift
 //  Car Game Test
 //
-//  Created by Daniel on 17/4/19.
+//  Created by Daniel on 18/4/19.
 //  Copyright © 2019 Placeholder Interactive. All rights reserved.
 //
 
 import UIKit
-    var equippedGasTank = "missan"
-class GasTankTableViewController: UITableViewController {
+
+var equippedEngine = "equinox"
+class EngineTableViewController: UITableViewController {
     @IBOutlet var mainTable: UITableView!
     
     
@@ -59,8 +60,8 @@ class GasTankTableViewController: UITableViewController {
         
         
         // SWITCH FOR EQUIPPED CAR BUTTON SHOWINGSGINGS
-        switch equippedGasTank {
-        case "missan":
+        switch equippedEngine {
+        case "equinox":
             // MAIN
             missanButton.backgroundColor = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0)
             missanButton.setTitle("CHOSEN", for: .normal)
@@ -77,7 +78,7 @@ class GasTankTableViewController: UITableViewController {
                 texlaButton.setTitle("EQUIP", for: .normal)
             }
             mainTable.reloadData()
-        case "lazus":
+        case "turbo":
             // MAIN
             lazusButton.backgroundColor = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0)
             lazusButton.setTitle("CHOSEN", for: .normal)
@@ -92,7 +93,7 @@ class GasTankTableViewController: UITableViewController {
                 texlaButton.setTitle("EQUIP", for: .normal)
             }
             mainTable.reloadData()
-        case "texla":
+        case "hybrid":
             // MAIN
             texlaButton.backgroundColor = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.0)
             texlaButton.setTitle("CHOSEN", for: .normal)
@@ -158,7 +159,7 @@ class GasTankTableViewController: UITableViewController {
      }
      */
     @IBAction func buyMissan(_ sender: Any) {
-        equippedGasTank = "missan"
+        equippedEngine = "equinox"
         checkForEquipped()
     }
     
@@ -167,7 +168,7 @@ class GasTankTableViewController: UITableViewController {
             if haveLazus == false {
                 totalPts -= lazusPts
             }
-            equippedGasTank = "lazus"
+            equippedEngine = "turbo"
             haveLazus = true
             lazusDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
@@ -180,7 +181,7 @@ class GasTankTableViewController: UITableViewController {
             if haveTexla == false {
                 totalPts -= texlaPts
             }
-            equippedGasTank = "texla"
+            equippedEngine = "hybrid"
             haveTexla = true
             texlaDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"

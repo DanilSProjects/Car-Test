@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     var secTimer2 = Timer()
     
     var fuelDepleteTime = 5
+    var trashComeDownTime = 0.01
     
     var leftSwipe1 = UISwipeGestureRecognizer()
     var leftSwipe2 = UISwipeGestureRecognizer()
@@ -41,8 +42,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         if equippedCar == "missan" || equippedCar == "lazus" {
             fuelDepleteTime = 5
+            if equippedCar == "lazus" {
+            trashComeDownTime = 0.015
+            }
         } else {
             fuelDepleteTime = Int(7.5)
+            trashComeDownTime = 0.01
         }
         fuelStation.isHidden = true
         statsLabel.text = "POINTS: \(pts) FUEL: \(fuel)L"
@@ -121,7 +126,7 @@ class ViewController: UIViewController {
                 
                 self.trash1.isHidden = false
                 self.trash2.isHidden = false
-                self.secTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(_) in
+                self.secTimer = Timer.scheduledTimer(withTimeInterval: self.trashComeDownTime, repeats: true, block: {(_) in
                     self.trash1.frame.origin.y += 1
                     if (self.trash1.frame.intersects(self.car.frame)){
                         self.stopGame()
@@ -130,7 +135,7 @@ class ViewController: UIViewController {
                     }
                 })
                 
-                self.secTimer2 = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(_) in
+                self.secTimer2 = Timer.scheduledTimer(withTimeInterval: self.trashComeDownTime, repeats: true, block: {(_) in
                     self.trash2.frame.origin.y += 1
                     if (self.trash2.frame.intersects(self.car.frame)){
                         self.stopGame()

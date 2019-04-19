@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     var fuelDepleteTime = 5
     var trashComeDownTime = 0.01
+    var spawnTime = 2
     
     var leftSwipe1 = UISwipeGestureRecognizer()
     var leftSwipe2 = UISwipeGestureRecognizer()
@@ -42,12 +43,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         if equippedCar == "missan" || equippedCar == "lazus" {
             fuelDepleteTime = 5
+            spawnTime = 2
             if equippedCar == "lazus" {
             trashComeDownTime = 0.015
+            spawnTime = 3
             }
         } else {
             fuelDepleteTime = Int(7.5)
             trashComeDownTime = 0.01
+            spawnTime = 2
         }
         fuelStation.isHidden = true
         statsLabel.text = "POINTS: \(pts) FUEL: \(fuel)L"
@@ -119,7 +123,7 @@ class ViewController: UIViewController {
             
             
             // TRASH MOVES DOWN + COLLISION WITH CAR
-            if self.time % 2 == 0 {
+            if self.time % self.spawnTime == 0 {
                 
                 self.trash1.image = UIImage(named: self.images[Int.random(in:0 ... 3)])
                 self.trash2.image = UIImage(named: self.images[Int.random(in:0 ... 3)])

@@ -16,14 +16,24 @@ class FuelTableViewController: UITableViewController {
     @IBOutlet weak var choosePetrol: UIButton!
     @IBOutlet weak var chooseBio: UIButton!
     @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var bioPriceLabe: UILabel!
+    
+    var biofuelPrice = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if equippedCar == "missan" || equippedCar == "lazus" {
+            biofuelPrice = 1000
+        } else {
+            biofuelPrice = 750
+            bioPriceLabe.text = "\(biofuelPrice) POINTS"
+        }
         pointsLabel.text = "Points: \(totalPts)"
         mainTable.allowsSelection = false
         choosePetrol.layer.cornerRadius = 5
         chooseBio.layer.cornerRadius = 5
-        if totalPts > 999 {
+        if totalPts >= biofuelPrice {
             chooseBio.isUserInteractionEnabled = true
             
             chooseBio.setTitle("CHOOSE", for: .normal)
@@ -56,7 +66,7 @@ class FuelTableViewController: UITableViewController {
     }
     
     @IBAction func biofuel(_ sender: Any) {
-        totalPts -= 1000
+        totalPts -= biofuelPrice
         fuelType = 1
     }
     /*

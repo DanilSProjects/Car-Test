@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     var secTimer = Timer()
     var secTimer2 = Timer()
     
+    var fuelDepleteTime = 5
+    
     var leftSwipe1 = UISwipeGestureRecognizer()
     var leftSwipe2 = UISwipeGestureRecognizer()
     var rightSwipe1 = UISwipeGestureRecognizer()
@@ -37,6 +39,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if equippedCar == "missan" || equippedCar == "lazus" {
+            fuelDepleteTime = 5
+        } else {
+            fuelDepleteTime = Int(7.5)
+        }
         fuelStation.isHidden = true
         statsLabel.text = "POINTS: \(pts) FUEL: \(fuel)L"
         fuel = 5
@@ -99,7 +106,7 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.time += 1
             print(self.time)
-            if self.time % 5 == 0 {
+            if self.time % self.fuelDepleteTime == 0 {
                 self.pts += self.ptsToIncrease
                 fuel -= 1
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"

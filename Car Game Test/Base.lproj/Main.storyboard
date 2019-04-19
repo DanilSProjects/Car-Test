@@ -241,6 +241,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="bioPriceLabe" destination="20N-ul-eXx" id="OLd-fM-wdO"/>
                         <outlet property="chooseBio" destination="bHg-eS-C7h" id="u6d-9C-WIR"/>
                         <outlet property="choosePetrol" destination="kSZ-J0-Y72" id="4hI-rg-a5R"/>
                         <outlet property="mainTable" destination="HW1-YB-oq1" id="Brj-cu-JWF"/>
@@ -1693,7 +1694,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnt-1b-jGF">
                                                     <rect key="frame" x="187" y="45" width="188" height="104"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">- 50% off biofuel
+                                                    <string key="text">- 25% off biofuel
 - Fuel depletes 50% slower</string>
                                                     <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -1802,6 +1803,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="JLM-if-Sqm"/>
         <segue reference="gKH-5r-FNo"/>
-        <segue reference="Wmq-dV-LIq"/>
+        <segue reference="CYs-1J-83C"/>
     </inferredMetricsTieBreakers>
 </document>

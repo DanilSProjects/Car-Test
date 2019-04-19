@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     var secTimer = Timer()
     var secTimer2 = Timer()
     
+    var fuelUpgrade = 5
     var fuelDepleteTime = 5
     var trashComeDownTime = 0.01
     var spawnTime = 2
@@ -41,6 +42,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if equippedGasTank == "missan" {
+            fuelUpgrade = 5
+        } else if equippedGasTank == "lazus" {
+            fuelUpgrade = 7
+        } else if equippedGasTank == "texla" {
+            fuelUpgrade = 9
+        }
         if equippedCar == "missan" || equippedCar == "lazus" {
             fuelDepleteTime = 5
             spawnTime = 2
@@ -55,7 +64,7 @@ class ViewController: UIViewController {
         }
         fuelStation.isHidden = true
         statsLabel.text = "POINTS: \(pts) FUEL: \(fuel)L"
-        fuel = 5
+        fuel = fuelUpgrade
         pts = 0
         
         switch fuelType {
@@ -72,7 +81,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func startButton(_ sender: Any) {
-        fuel = 5
+        fuel = fuelUpgrade
         pts = 0
         time = 0
         moveCar()

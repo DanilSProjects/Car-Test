@@ -55,6 +55,9 @@ class SettingsTableViewController: UITableViewController {
             print ("Something has gone wrong in settings, sir.")
         }
     }
+    @IBAction func backPress(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

@@ -101,18 +101,6 @@ class ViewController: UIViewController {
             }
         }
     }
-
-
-    @IBAction func startButton(_ sender: Any) {
-        fuel = fuelUpgrade
-        pts = 0
-        time = 0
-        moveCar()
-    }
-    
-    @IBAction func stopButton(_ sender: Any) {
-        stopGame()
-    }
     
     func moveCar() {
         

@@ -23,8 +23,8 @@ class GasTankTableViewController: UITableViewController {
     var haveLazus = false
     var haveTexla = false
     
-    var lazusPts = 25
-    var texlaPts = 50
+    var lazusPts = 2500
+    var texlaPts = 7500
     
     override func viewDidLoad() {
         super.viewDidLoad()

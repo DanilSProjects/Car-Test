@@ -24,8 +24,8 @@ class EngineTableViewController: UITableViewController {
     var haveLazus = false
     var haveTexla = false
     
-    var lazusPts = 25
-    var texlaPts = 50
+    var lazusPts = 2000
+    var texlaPts = 7000
     
     override func viewDidLoad() {
         super.viewDidLoad()

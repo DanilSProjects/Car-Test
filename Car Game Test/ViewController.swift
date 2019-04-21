@@ -80,13 +80,25 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        switch fuelType {
-        case 0:
+        if fuelType == 0 {
             ptsToIncrease = 50
-        case 1:
+            if equippedCar == "lazus" {
+                ptsToIncrease -= 25
+            }
+            if equippedEngine == "hybrid" {
+                ptsToIncrease += (ptsToIncrease / 2)
+            }
+        } else if fuelType == 1 {
             ptsToIncrease = 75
-        default:
-            print("Something's gone wrong HQ")
+            if equippedCar == "lazus" {
+                ptsToIncrease -= 40
+                if equippedEngine == "hybrid" {
+                    ptsToIncrease = 45
+                }
+            }
+            if equippedEngine == "hybrid" {
+                ptsToIncrease = 95
+            }
         }
     }
 

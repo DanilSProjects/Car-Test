@@ -24,7 +24,7 @@ class FuelTableViewController: UITableViewController {
         super.viewDidLoad()
         
         if equippedCar == "missan" || equippedCar == "lazus" {
-            biofuelPrice = 1000
+            biofuelPrice = 50
         } else {
             biofuelPrice = 750
             bioPriceLabe.text = "\(biofuelPrice) POINTS"

@@ -78,6 +78,17 @@ class ViewController: UIViewController {
         time = 0
         moveCar()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        switch fuelType {
+        case 0:
+            ptsToIncrease = 50
+        case 1:
+            ptsToIncrease = 75
+        default:
+            print("Something's gone wrong HQ")
+        }
+    }
 
 
     @IBAction func startButton(_ sender: Any) {

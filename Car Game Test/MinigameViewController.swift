@@ -11,6 +11,7 @@ import UIKit
 class MinigameViewController: UIViewController {
     
     var earnedFuel = 0
+    var fuelAddition = 1
     var activeTrash = 0
     var trashArray: [Trash] = [Trash(imageName: "bag", descName: "Plastic Bag"), Trash(imageName: "cardboard", descName: "Cardboard Box"), Trash(imageName: "battery", descName: "Alkaline Battery"), Trash(imageName: "tissue", descName: "Used Tissue Paper")]
     
@@ -21,6 +22,12 @@ class MinigameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if equippedEngine == "turbo" {
+            fuelAddition = 2
+        } else {
+            fuelAddition = 1
+        }
        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.leftSwipeAction(swipe:)))
         leftSwipe.direction = UISwipeGestureRecognizer.Direction.left
         view.addGestureRecognizer(leftSwipe)
@@ -61,7 +68,7 @@ class MinigameViewController: UIViewController {
                 update()
             } else if trashCurrent == UIImage(named: "battery")?.pngData() ||
                 trashCurrent == UIImage(named: "tissue")?.pngData(){
-                earnedFuel += 1
+                earnedFuel += fuelAddition
                 activeTrash += 1
                 update()
             }
@@ -80,7 +87,7 @@ class MinigameViewController: UIViewController {
             
             if trashCurrent == UIImage(named: "cardboard")?.pngData() ||
                 trashCurrent == UIImage(named: "bag")?.pngData(){
-                earnedFuel += 1
+                earnedFuel += fuelAddition
                 activeTrash += 1
                 update()
             } else if trashCurrent == UIImage(named: "battery")?.pngData() ||

@@ -241,7 +241,7 @@ class ViewController: UIViewController {
 
             if trash1Current == UIImage(named: "battery")?.pngData() ||
                 trash1Current == UIImage(named: "tissue")?.pngData(){
-                pts += ptsToIncrease - 25
+                pts += ptsToIncrease - (ptsToIncrease/2)
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash1.isHidden = true
                 self.trash1.frame.origin.y = 203.0
@@ -265,7 +265,7 @@ class ViewController: UIViewController {
             
             if trash2Current == UIImage(named: "battery")?.pngData() ||
                 trash2Current == UIImage(named: "tissue")?.pngData(){
-                pts += ptsToIncrease - 25
+                pts += ptsToIncrease - (ptsToIncrease/2)
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash2.isHidden = true
                 self.trash2.frame.origin.y = 203.0
@@ -291,7 +291,7 @@ class ViewController: UIViewController {
             
             if trash1Current == UIImage(named: "cardboard")?.pngData() ||
                 trash1Current == UIImage(named: "bag")?.pngData(){
-                pts += ptsToIncrease - 25
+                pts += ptsToIncrease - (ptsToIncrease/2)
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash1.isHidden = true
                 self.trash1.frame.origin.y = 203.0
@@ -315,7 +315,7 @@ class ViewController: UIViewController {
             
             if trash2Current == UIImage(named: "cardboard")?.pngData() ||
                 trash2Current == UIImage(named: "bag")?.pngData(){
-                pts += ptsToIncrease - 25
+                pts += ptsToIncrease - (ptsToIncrease/2)
                 self.statsLabel.text = "POINTS: \(self.pts) FUEL: \(fuel)"
                 self.trash2.isHidden = true
                 self.trash2.frame.origin.y = 203.0

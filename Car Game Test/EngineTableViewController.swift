@@ -9,6 +9,9 @@
 import UIKit
 
 var equippedEngine = "equinox"
+var haveTurbo = false
+var haveHybrid = false
+
 class EngineTableViewController: UITableViewController {
     @IBOutlet var mainTable: UITableView!
     
@@ -20,9 +23,6 @@ class EngineTableViewController: UITableViewController {
     
     @IBOutlet weak var lazusDesc: UILabel!
     @IBOutlet weak var texlaDesc: UILabel!
-    
-    var haveLazus = false
-    var haveTexla = false
     
     var lazusPts = 2000
     var texlaPts = 7000
@@ -68,12 +68,12 @@ class EngineTableViewController: UITableViewController {
             
             // OTHERS
             // LAZUS
-            if haveLazus == true {
+            if haveTurbo == true {
                 lazusButton.backgroundColor = UIColor(red:0.36, green:0.70, blue:1.00, alpha:1.0)
                 lazusButton.setTitle("EQUIP", for: .normal)
             }
             // TEXLA
-            if haveTexla == true {
+            if haveHybrid == true {
                 texlaButton.backgroundColor = UIColor(red:0.36, green:0.70, blue:1.00, alpha:1.0)
                 texlaButton.setTitle("EQUIP", for: .normal)
             }
@@ -88,7 +88,7 @@ class EngineTableViewController: UITableViewController {
             missanButton.setTitle("EQUIP", for: .normal)
             
             // TEXLA
-            if haveTexla == true {
+            if haveHybrid == true {
                 texlaButton.backgroundColor = UIColor(red:0.36, green:0.70, blue:1.00, alpha:1.0)
                 texlaButton.setTitle("EQUIP", for: .normal)
             }
@@ -103,7 +103,7 @@ class EngineTableViewController: UITableViewController {
             missanButton.setTitle("EQUIP", for: .normal)
             
             // LAZUS
-            if haveLazus == true {
+            if haveTurbo == true {
                 lazusButton.backgroundColor = UIColor(red:0.36, green:0.70, blue:1.00, alpha:1.0)
                 lazusButton.setTitle("EQUIP", for: .normal)
                 
@@ -160,16 +160,20 @@ class EngineTableViewController: UITableViewController {
      */
     @IBAction func buyMissan(_ sender: Any) {
         equippedEngine = "equinox"
+        UserDefaults.standard.set(equippedEngine, forKey: "equippedEngine")
         checkForEquipped()
     }
     
     @IBAction func buyLazus(_ sender: Any) {
         if totalPts >= lazusPts {
-            if haveLazus == false {
+            if haveTurbo == false {
                 totalPts -= lazusPts
+                UserDefaults.standard.set(totalPts, forKey: "totalPts")
             }
             equippedEngine = "turbo"
-            haveLazus = true
+            UserDefaults.standard.set(equippedEngine, forKey: "equippedEngine")
+            haveTurbo = true
+            UserDefaults.standard.set(haveTurbo, forKey: "haveTurbo")
             lazusDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
             checkForEquipped()
@@ -178,11 +182,14 @@ class EngineTableViewController: UITableViewController {
     
     @IBAction func buyTexla(_ sender: Any) {
         if totalPts >= texlaPts {
-            if haveTexla == false {
+            if haveHybrid == false {
                 totalPts -= texlaPts
+                UserDefaults.standard.set(totalPts, forKey: "totalPts")
             }
             equippedEngine = "hybrid"
-            haveTexla = true
+            UserDefaults.standard.set(equippedEngine, forKey: "equippedEngine")
+            haveHybrid = true
+            UserDefaults.standard.set(haveHybrid, forKey: "haveHybrid")
             texlaDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
             checkForEquipped()

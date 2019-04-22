@@ -68,6 +68,7 @@ class FuelTableViewController: UITableViewController {
     @IBAction func biofuel(_ sender: Any) {
         totalPts -= biofuelPrice
         fuelType = 1
+        UserDefaults.standard.set(totalPts, forKey: "totalPts")
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -41,7 +41,28 @@ class SettingsTableViewController: UITableViewController {
         switch indexPath.row {
         case 1:
             // Reset progress
-            print ("Reset progress")
+            totalPts = 0
+            haveLazus = false
+            haveTexla = false
+            haveII = false
+            haveIII = false
+            haveTurbo = false
+            haveHybrid = false
+            equippedCar = "missan"
+            equippedGasTank = "missan"
+            equippedEngine = "equinox"
+            
+            UserDefaults.standard.set(totalPts, forKey: "totalPts")
+            UserDefaults.standard.set(equippedCar, forKey: "equippedCar")
+            UserDefaults.standard.set(equippedGasTank, forKey: "equippedGasTank")
+            UserDefaults.standard.set(equippedEngine, forKey: "equippedEngine")
+            UserDefaults.standard.set(haveLazus, forKey: "haveLazus")
+            UserDefaults.standard.set(haveTexla, forKey: "haveTexla")
+            UserDefaults.standard.set(haveII, forKey: "haveII")
+            UserDefaults.standard.set(haveIII, forKey: "haveIII")
+            UserDefaults.standard.set(haveTurbo, forKey: "haveTurbo")
+            UserDefaults.standard.set(haveHybrid, forKey: "haveHybrid")
+            
         case 3:
             performSegue(withIdentifier: "music", sender: nil)
         case 5:

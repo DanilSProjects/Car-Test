@@ -19,6 +19,28 @@ class MainMenuViewController: UIViewController {
         play.layer.cornerRadius = 5
         tut.layer.cornerRadius = 5
         settings.layer.cornerRadius = 5
+        
+        // Loading of Items
+        let loadedPoints = UserDefaults.standard.integer(forKey: "totalPts")
+        totalPts = loadedPoints
+        let loadedCar = UserDefaults.standard.string(forKey: "equippedCar")
+        equippedCar = loadedCar ?? "missan"
+        let loadedGasTank = UserDefaults.standard.string(forKey: "equippedGasTank")
+        equippedGasTank = loadedGasTank ?? "missan"
+        let loadedEngine = UserDefaults.standard.string(forKey: "equippedEngine")
+        equippedEngine = loadedEngine ?? "equinox"
+        let loadedLazus = UserDefaults.standard.bool(forKey: "haveLazus")
+        haveLazus = loadedLazus
+        let loadedTexla = UserDefaults.standard.bool(forKey: "haveTexla")
+        haveTexla = loadedTexla
+        let loadedII = UserDefaults.standard.bool(forKey: "haveII")
+        haveII = loadedII
+        let loadedIII = UserDefaults.standard.bool(forKey: "haveIII")
+        haveIII = loadedIII
+        let loadedTurbo = UserDefaults.standard.bool(forKey: "haveTurbo")
+        haveTurbo = loadedTurbo
+        let loadedHybrid = UserDefaults.standard.bool(forKey: "haveHybrid")
+        haveHybrid = loadedHybrid
     }
     
 

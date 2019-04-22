@@ -202,6 +202,8 @@ class ViewController: UIViewController {
     
     func stopGame() {
         totalPts += pts
+        UserDefaults.standard.set(totalPts, forKey: "totalPts")
+        
         gifView.image = UIImage(named: "stoproad")
         secTimer.invalidate()
         secTimer2.invalidate()

@@ -8,6 +8,9 @@
 
 import UIKit
     var equippedGasTank = "missan"
+    var haveII = false
+    var haveIII = false
+
 class GasTankTableViewController: UITableViewController {
     @IBOutlet var mainTable: UITableView!
     
@@ -19,9 +22,6 @@ class GasTankTableViewController: UITableViewController {
     
     @IBOutlet weak var lazusDesc: UILabel!
     @IBOutlet weak var texlaDesc: UILabel!
-    
-    var haveLazus = false
-    var haveTexla = false
     
     var lazusPts = 2500
     var texlaPts = 7500
@@ -67,12 +67,12 @@ class GasTankTableViewController: UITableViewController {
             
             // OTHERS
             // LAZUS
-            if haveLazus == true {
+            if haveII == true {
                 lazusButton.backgroundColor = UIColor(red:0.36, green:0.70, blue:1.00, alpha:1.0)
                 lazusButton.setTitle("EQUIP", for: .normal)
             }
             // TEXLA
-            if haveTexla == true {
+            if haveIII == true {
                 texlaButton.backgroundColor = UIColor(red:0.36, green:0.70, blue:1.00, alpha:1.0)
                 texlaButton.setTitle("EQUIP", for: .normal)
             }
@@ -87,7 +87,7 @@ class GasTankTableViewController: UITableViewController {
             missanButton.setTitle("EQUIP", for: .normal)
             
             // TEXLA
-            if haveTexla == true {
+            if haveIII == true {
                 texlaButton.backgroundColor = UIColor(red:0.36, green:0.70, blue:1.00, alpha:1.0)
                 texlaButton.setTitle("EQUIP", for: .normal)
             }
@@ -102,7 +102,7 @@ class GasTankTableViewController: UITableViewController {
             missanButton.setTitle("EQUIP", for: .normal)
             
             // LAZUS
-            if haveLazus == true {
+            if haveII == true {
                 lazusButton.backgroundColor = UIColor(red:0.36, green:0.70, blue:1.00, alpha:1.0)
                 lazusButton.setTitle("EQUIP", for: .normal)
                 
@@ -159,16 +159,22 @@ class GasTankTableViewController: UITableViewController {
      */
     @IBAction func buyMissan(_ sender: Any) {
         equippedGasTank = "missan"
+        UserDefaults.standard.set(equippedGasTank, forKey: "equippedGasTank")
+
         checkForEquipped()
     }
     
     @IBAction func buyLazus(_ sender: Any) {
         if totalPts >= lazusPts {
-            if haveLazus == false {
+            if haveII == false {
                 totalPts -= lazusPts
+                UserDefaults.standard.set(totalPts, forKey: "totalPts")
             }
             equippedGasTank = "lazus"
-            haveLazus = true
+            UserDefaults.standard.set(equippedGasTank, forKey: "equippedGasTank")
+
+            haveII = true
+            UserDefaults.standard.set(haveII, forKey: "haveII")
             lazusDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
             checkForEquipped()
@@ -177,11 +183,15 @@ class GasTankTableViewController: UITableViewController {
     
     @IBAction func buyTexla(_ sender: Any) {
         if totalPts >= texlaPts {
-            if haveTexla == false {
+            if haveIII == false {
                 totalPts -= texlaPts
+                UserDefaults.standard.set(totalPts, forKey: "totalPts")
             }
             equippedGasTank = "texla"
-            haveTexla = true
+            UserDefaults.standard.set(equippedGasTank, forKey: "equippedGasTank")
+
+            haveIII = true
+            UserDefaults.standard.set(haveIII, forKey: "haveIII")
             texlaDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
             checkForEquipped()

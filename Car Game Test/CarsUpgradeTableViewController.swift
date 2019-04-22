@@ -8,6 +8,9 @@
 
 import UIKit
 var equippedCar = "missan"
+var haveLazus = false
+var haveTexla = false
+
 class CarsUpgradeTableViewController: UITableViewController {
     @IBOutlet var mainTable: UITableView!
     
@@ -20,9 +23,6 @@ class CarsUpgradeTableViewController: UITableViewController {
     
     @IBOutlet weak var lazusDesc: UILabel!
     @IBOutlet weak var texlaDesc: UILabel!
-    
-    var haveLazus = false
-    var haveTexla = false
     
     var lazusPts = 7500
     var texlaPts = 8000
@@ -162,6 +162,7 @@ class CarsUpgradeTableViewController: UITableViewController {
     */
     @IBAction func buyMissan(_ sender: Any) {
             equippedCar = "missan"
+        UserDefaults.standard.set(equippedCar, forKey: "equippedCar")
         checkForEquipped()
     }
     
@@ -169,9 +170,12 @@ class CarsUpgradeTableViewController: UITableViewController {
         if totalPts >= lazusPts {
             if haveLazus == false {
                 totalPts -= lazusPts
+                UserDefaults.standard.set(totalPts, forKey: "totalPts")
             }
             equippedCar = "lazus"
+            UserDefaults.standard.set(equippedCar, forKey: "equippedCar")
             haveLazus = true
+            UserDefaults.standard.set(haveLazus, forKey: "haveLazus")
             lazusDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
             checkForEquipped()
@@ -182,9 +186,12 @@ class CarsUpgradeTableViewController: UITableViewController {
         if totalPts >= texlaPts {
             if haveTexla == false {
                 totalPts -= texlaPts
+                UserDefaults.standard.set(totalPts, forKey: "totalPts")
             }
             equippedCar = "texla"
+            UserDefaults.standard.set(equippedCar, forKey: "equippedCar")
             haveTexla = true
+            UserDefaults.standard.set(haveTexla, forKey: "haveTexla")
             texlaDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
             checkForEquipped()

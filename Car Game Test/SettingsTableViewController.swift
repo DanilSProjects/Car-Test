@@ -34,7 +34,7 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 11
+        return 9
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -64,12 +64,10 @@ class SettingsTableViewController: UITableViewController {
             UserDefaults.standard.set(haveHybrid, forKey: "haveHybrid")
             
         case 3:
-            performSegue(withIdentifier: "music", sender: nil)
-        case 5:
             performSegue(withIdentifier: "stats", sender: nil)
-        case 7:
+        case 5:
             performSegue(withIdentifier: "useful", sender: nil)
-        case 9:
+        case 7:
             performSegue(withIdentifier: "about", sender: nil)
             
         default:

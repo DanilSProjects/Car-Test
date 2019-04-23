@@ -16,6 +16,9 @@
 		650EF3392234EAC200174B40 /* movingroad.gif in Resources */ = {isa = PBXBuildFile; fileRef = 650EF3382234EAC200174B40 /* movingroad.gif */; };
 		6512A9B02259018900DB6447 /* TutorialFuelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512A9AF2259018900DB6447 /* TutorialFuelViewController.swift */; };
 		6512A9B2225902EF00DB6447 /* TutorialFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512A9B1225902EF00DB6447 /* TutorialFinalViewController.swift */; };
+		651473DF226F0D54004671E8 /* theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 651473DE226F0D54004671E8 /* theme.mp3 */; };
+		651473E1226F0D9A004671E8 /* game.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 651473E0226F0D99004671E8 /* game.mp3 */; };
+		651473E3226F1687004671E8 /* gameover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 651473E2226F1686004671E8 /* gameover.mp3 */; };
 		65354139223FC55400FEDB60 /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65354138223FC55400FEDB60 /* Trash.swift */; };
 		65502A2522539D0500A5F22D /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65502A2422539D0500A5F22D /* MainMenuViewController.swift */; };
 		65502A2722539DCA00A5F22D /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65502A2622539DCA00A5F22D /* TutorialViewController.swift */; };
@@ -40,6 +43,9 @@
 		650EF3382234EAC200174B40 /* movingroad.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = movingroad.gif; sourceTree = "<group>"; };
 		6512A9AF2259018900DB6447 /* TutorialFuelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFuelViewController.swift; sourceTree = "<group>"; };
 		6512A9B1225902EF00DB6447 /* TutorialFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFinalViewController.swift; sourceTree = "<group>"; };
+		651473DE226F0D54004671E8 /* theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = theme.mp3; sourceTree = "<group>"; };
+		651473E0226F0D99004671E8 /* game.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game.mp3; sourceTree = "<group>"; };
+		651473E2226F1686004671E8 /* gameover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gameover.mp3; path = ../../gameover.mp3; sourceTree = "<group>"; };
 		65354138223FC55400FEDB60 /* Trash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
 		65502A2422539D0500A5F22D /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		65502A2622539DCA00A5F22D /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 				658CCC3D22648A7C00F7303F /* CarsUpgradeTableViewController.swift */,
 				650EF3282234E8CD00174B40 /* Main.storyboard */,
 				659465A62268B9F70071EEB3 /* EngineTableViewController.swift */,
+				651473E2226F1686004671E8 /* gameover.mp3 */,
+				651473DE226F0D54004671E8 /* theme.mp3 */,
+				651473E0226F0D99004671E8 /* game.mp3 */,
 				65E76EB72267605C00681DCE /* GasTankTableViewController.swift */,
 				6512A9B1225902EF00DB6447 /* TutorialFinalViewController.swift */,
 				6512A9AF2259018900DB6447 /* TutorialFuelViewController.swift */,
@@ -164,9 +173,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651473E3226F1687004671E8 /* gameover.mp3 in Resources */,
+				651473E1226F0D9A004671E8 /* game.mp3 in Resources */,
 				650EF3392234EAC200174B40 /* movingroad.gif in Resources */,
 				650EF32F2234E8CF00174B40 /* LaunchScreen.storyboard in Resources */,
 				650EF32C2234E8CF00174B40 /* Assets.xcassets in Resources */,
+				651473DF226F0D54004671E8 /* theme.mp3 in Resources */,
 				650EF32A2234E8CD00174B40 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

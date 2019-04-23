@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import AVFoundation
+var audioPlayer: AVAudioPlayer?
 class MainMenuViewController: UIViewController {
 
     @IBOutlet weak var play: UIButton!
@@ -16,6 +17,7 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playBackgroundMusic(filename: "theme.mp3")
         play.layer.cornerRadius = 5
         tut.layer.cornerRadius = 5
         settings.layer.cornerRadius = 5
@@ -43,7 +45,22 @@ class MainMenuViewController: UIViewController {
         haveHybrid = loadedHybrid
     }
     
-
+    func playBackgroundMusic(filename: String) {
+        let url = Bundle.main.url(forResource: filename, withExtension: nil)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: newURL)
+            audioPlayer?.numberOfLoops = -1
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

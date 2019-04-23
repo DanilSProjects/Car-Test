@@ -603,42 +603,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="Xhm-jN-21N">
-                                        <rect key="frame" x="0.0" y="212" width="375" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xhm-jN-21N" id="Ida-Vt-wfc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96o-Oe-0Nf">
-                                                    <rect key="frame" x="16" y="16" width="153" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y2-ft-GDi">
-                                                    <rect key="frame" x="111" y="16" width="264" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="2" id="2Bm-U2-wag">
-                                        <rect key="frame" x="0.0" y="272" width="375" height="2"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Bm-U2-wag" id="dBr-gv-mhO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="1.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="GDi-8X-uNd">
-                                        <rect key="frame" x="0.0" y="274" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="212" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GDi-8X-uNd" id="0OO-CW-zeB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -656,7 +622,7 @@
                                         <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="2" id="IYL-lN-Cos">
-                                        <rect key="frame" x="0.0" y="334" width="375" height="2"/>
+                                        <rect key="frame" x="0.0" y="272" width="375" height="2"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IYL-lN-Cos" id="dlt-e8-9vc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="1.5"/>
@@ -665,7 +631,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="90b-IH-34f">
-                                        <rect key="frame" x="0.0" y="336" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="274" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="90b-IH-34f" id="xPR-24-WKT">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -683,7 +649,7 @@
                                         <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="2" id="1c1-bK-0eZ">
-                                        <rect key="frame" x="0.0" y="396" width="375" height="2"/>
+                                        <rect key="frame" x="0.0" y="334" width="375" height="2"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1c1-bK-0eZ" id="HDC-et-VF8">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="1.5"/>
@@ -692,7 +658,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="WX2-qx-uj5">
-                                        <rect key="frame" x="0.0" y="398" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="336" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WX2-qx-uj5" id="9Mn-SN-MdR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -710,7 +676,7 @@
                                         <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="6WG-fp-d5p">
-                                        <rect key="frame" x="0.0" y="458" width="375" height="150"/>
+                                        <rect key="frame" x="0.0" y="396" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6WG-fp-d5p" id="xqZ-yC-sEf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
@@ -743,7 +709,6 @@
                     <navigationItem key="navigationItem" id="Mrf-tE-yrB"/>
                     <connections>
                         <outlet property="backButton" destination="b7q-Sq-1We" id="Ge3-bj-ggg"/>
-                        <segue destination="h99-zs-vBw" kind="show" identifier="music" id="dur-qC-l6j"/>
                         <segue destination="CCO-aa-cTY" kind="show" identifier="stats" id="Qkj-QI-KDx"/>
                         <segue destination="ReZ-3c-CHA" kind="show" identifier="useful" id="bpu-vg-Vib"/>
                         <segue destination="21l-xu-VtG" kind="show" identifier="about" id="zM4-s9-0Xw"/>
@@ -782,21 +747,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqJ-sd-8bR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-457" y="2009"/>
-        </scene>
-        <!--Music Selection-->
-        <scene sceneID="tTX-1w-WMX">
-            <objects>
-                <viewController title="Music Selection" id="h99-zs-vBw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="alu-hL-iqZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="3v1-95-sTE"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8KN-2Y-MvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1202.4000000000001" y="1644.8275862068967"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AdL-aS-IrN">
@@ -1782,6 +1732,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="bQn-sF-f1x"/>
         <segue reference="gKH-5r-FNo"/>
-        <segue reference="Md5-Za-GKR"/>
+        <segue reference="IwR-Ss-Ofq"/>
     </inferredMetricsTieBreakers>
 </document>

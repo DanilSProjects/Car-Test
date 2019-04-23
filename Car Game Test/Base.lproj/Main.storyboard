@@ -710,8 +710,8 @@
                     <connections>
                         <outlet property="backButton" destination="b7q-Sq-1We" id="Ge3-bj-ggg"/>
                         <segue destination="CCO-aa-cTY" kind="show" identifier="stats" id="Qkj-QI-KDx"/>
-                        <segue destination="ReZ-3c-CHA" kind="show" identifier="useful" id="bpu-vg-Vib"/>
                         <segue destination="21l-xu-VtG" kind="show" identifier="about" id="zM4-s9-0Xw"/>
+                        <segue destination="W0t-ul-I5o" kind="show" identifier="useful" id="mLs-mB-8nn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0d-Mh-bvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -719,19 +719,33 @@
             <point key="canvasLocation" x="292" y="1267.9160419790105"/>
         </scene>
         <!--Useful Links-->
-        <scene sceneID="hXk-Ys-xQa">
+        <scene sceneID="n4Y-DZ-qjZ">
             <objects>
-                <viewController title="Useful Links" id="ReZ-3c-CHA" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IVa-MU-MDo">
+                <tableViewController title="Useful Links" id="W0t-ul-I5o" customClass="UsefulTableViewController" customModule="Car_Game_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SHb-XN-oFD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="kFl-0j-Xm9"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vug-LT-xUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="useful" id="iLY-Tz-Tsn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iLY-Tz-Tsn" id="ukL-Uh-UIG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="W0t-ul-I5o" id="ird-MQ-wFf"/>
+                            <outlet property="delegate" destination="W0t-ul-I5o" id="FVx-hs-cPS"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U6J-mJ-JBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1158" y="2008"/>
+            <point key="canvasLocation" x="-1207" y="2019"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="i6b-mX-dqG">

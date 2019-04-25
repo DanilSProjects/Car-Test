@@ -8,6 +8,7 @@
 
 import UIKit
 
+var correctSwipes = 0
 class MinigameViewController: UIViewController {
     
     var earnedFuel = 0
@@ -70,6 +71,8 @@ class MinigameViewController: UIViewController {
                 trashCurrent == UIImage(named: "tissue")?.pngData(){
                 earnedFuel += fuelAddition
                 activeTrash += 1
+                correctSwipes += 1
+                UserDefaults.standard.set(correctSwipes, forKey: "correctSwipes")
                 update()
             }
             
@@ -88,6 +91,9 @@ class MinigameViewController: UIViewController {
             if trashCurrent == UIImage(named: "cardboard")?.pngData() ||
                 trashCurrent == UIImage(named: "bag")?.pngData(){
                 earnedFuel += fuelAddition
+                correctSwipes += 1
+                UserDefaults.standard.set(correctSwipes, forKey: "correctSwipes")
+
                 activeTrash += 1
                 update()
             } else if trashCurrent == UIImage(named: "battery")?.pngData() ||

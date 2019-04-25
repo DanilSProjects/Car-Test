@@ -173,6 +173,8 @@ class EngineTableViewController: UITableViewController {
             equippedEngine = "turbo"
             UserDefaults.standard.set(equippedEngine, forKey: "equippedEngine")
             haveTurbo = true
+            upgradesBought += 1
+            UserDefaults.standard.set(upgradesBought, forKey: "upgradesBought")
             UserDefaults.standard.set(haveTurbo, forKey: "haveTurbo")
             lazusDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
@@ -189,6 +191,8 @@ class EngineTableViewController: UITableViewController {
             equippedEngine = "hybrid"
             UserDefaults.standard.set(equippedEngine, forKey: "equippedEngine")
             haveHybrid = true
+            upgradesBought += 1
+            UserDefaults.standard.set(upgradesBought, forKey: "upgradesBought")
             UserDefaults.standard.set(haveHybrid, forKey: "haveHybrid")
             texlaDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"

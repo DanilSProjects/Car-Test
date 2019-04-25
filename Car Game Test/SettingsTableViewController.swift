@@ -51,7 +51,13 @@ class SettingsTableViewController: UITableViewController {
             equippedCar = "missan"
             equippedGasTank = "missan"
             equippedEngine = "equinox"
+            lifetimePts = 0
+            trashNo = 0
+            recNo = 0
+            upgradesBought = 3
+            correctSwipes = 0
             
+            UserDefaults.standard.set(correctSwipes, forKey: "correctSwipes")
             UserDefaults.standard.set(totalPts, forKey: "totalPts")
             UserDefaults.standard.set(equippedCar, forKey: "equippedCar")
             UserDefaults.standard.set(equippedGasTank, forKey: "equippedGasTank")
@@ -62,7 +68,10 @@ class SettingsTableViewController: UITableViewController {
             UserDefaults.standard.set(haveIII, forKey: "haveIII")
             UserDefaults.standard.set(haveTurbo, forKey: "haveTurbo")
             UserDefaults.standard.set(haveHybrid, forKey: "haveHybrid")
-            
+            UserDefaults.standard.set(lifetimePts, forKey: "lifetimePts")
+            UserDefaults.standard.set(trashNo, forKey: "trashNo")
+            UserDefaults.standard.set(recNo, forKey: "recNo")
+            UserDefaults.standard.set(upgradesBought, forKey: "upgradesBought")
         case 3:
             performSegue(withIdentifier: "stats", sender: nil)
         case 5:

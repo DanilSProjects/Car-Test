@@ -26,6 +26,7 @@
 		65502A2922539DD500A5F22D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65502A2822539DD500A5F22D /* SettingsTableViewController.swift */; };
 		6551E0E3223E763F009A50C3 /* MinigameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6551E0E2223E763F009A50C3 /* MinigameViewController.swift */; };
 		655B23142248E03800FEEC3B /* FuelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B23132248E03800FEEC3B /* FuelTableViewController.swift */; };
+		655E6242227194A7004F9A0A /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655E6241227194A7004F9A0A /* StatsTableViewController.swift */; };
 		658CCC3E22648A7C00F7303F /* CarsUpgradeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658CCC3D22648A7C00F7303F /* CarsUpgradeTableViewController.swift */; };
 		659465A72268B9F70071EEB3 /* EngineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659465A62268B9F70071EEB3 /* EngineTableViewController.swift */; };
 		65E76EB82267605C00681DCE /* GasTankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E76EB72267605C00681DCE /* GasTankTableViewController.swift */; };
@@ -54,6 +55,7 @@
 		65502A2822539DD500A5F22D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6551E0E2223E763F009A50C3 /* MinigameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinigameViewController.swift; sourceTree = "<group>"; };
 		655B23132248E03800FEEC3B /* FuelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTableViewController.swift; sourceTree = "<group>"; };
+		655E6241227194A7004F9A0A /* StatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
 		658CCC3D22648A7C00F7303F /* CarsUpgradeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsUpgradeTableViewController.swift; sourceTree = "<group>"; };
 		659465A62268B9F70071EEB3 /* EngineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineTableViewController.swift; sourceTree = "<group>"; };
 		65E76EB72267605C00681DCE /* GasTankTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasTankTableViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				65F5ED9F225B8F66001B91D8 /* CustomAlertViewController.swift */,
 				658CCC3D22648A7C00F7303F /* CarsUpgradeTableViewController.swift */,
 				650EF3282234E8CD00174B40 /* Main.storyboard */,
+				655E6241227194A7004F9A0A /* StatsTableViewController.swift */,
 				651473E4226F1A9E004671E8 /* UsefulTableViewController.swift */,
 				659465A62268B9F70071EEB3 /* EngineTableViewController.swift */,
 				651473E2226F1686004671E8 /* gameover.mp3 */,
@@ -196,6 +199,7 @@
 				650EF3272234E8CD00174B40 /* ViewController.swift in Sources */,
 				65354139223FC55400FEDB60 /* Trash.swift in Sources */,
 				65502A2722539DCA00A5F22D /* TutorialViewController.swift in Sources */,
+				655E6242227194A7004F9A0A /* StatsTableViewController.swift in Sources */,
 				659465A72268B9F70071EEB3 /* EngineTableViewController.swift in Sources */,
 				6551E0E3223E763F009A50C3 /* MinigameViewController.swift in Sources */,
 				651473E5226F1A9E004671E8 /* UsefulTableViewController.swift in Sources */,

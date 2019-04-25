@@ -10,6 +10,9 @@ import UIKit
 import AVFoundation
 var fuel = 5
 var totalPts = 0
+var lifetimePts = 0
+var trashNo = 0
+var recNo = 0
 
 class ViewController: UIViewController {
 
@@ -207,7 +210,9 @@ class ViewController: UIViewController {
         audioPlayer?.play()
         
         totalPts += pts
+        lifetimePts += pts
         UserDefaults.standard.set(totalPts, forKey: "totalPts")
+        UserDefaults.standard.set(lifetimePts, forKey: "lifetimePts")
         
         gifView.image = UIImage(named: "stoproad")
         secTimer.invalidate()
@@ -241,7 +246,8 @@ class ViewController: UIViewController {
                 self.trash1.isHidden = true
                 self.trash1.frame.origin.y = 203.0
                 self.secTimer.invalidate()
-                
+                trashNo += 1
+                UserDefaults.standard.set(trashNo, forKey: "trashNo")
             } else {
                 stopGame()
             }
@@ -265,7 +271,8 @@ class ViewController: UIViewController {
                 self.trash2.isHidden = true
                 self.trash2.frame.origin.y = 203.0
                 self.secTimer2.invalidate()
-                
+                trashNo += 1
+                UserDefaults.standard.set(trashNo, forKey: "trashNo")
             } else {
                 stopGame()
             }
@@ -291,7 +298,8 @@ class ViewController: UIViewController {
                 self.trash1.isHidden = true
                 self.trash1.frame.origin.y = 203.0
                 self.secTimer.invalidate()
-                
+                recNo += 1
+                UserDefaults.standard.set(recNo, forKey: "recNo")
             } else {
                 stopGame()
             }
@@ -315,7 +323,8 @@ class ViewController: UIViewController {
                 self.trash2.isHidden = true
                 self.trash2.frame.origin.y = 203.0
                 self.secTimer2.invalidate()
-                
+                recNo += 1
+                UserDefaults.standard.set(recNo, forKey: "recNo")
             } else {
                 stopGame()
             }

@@ -10,6 +10,7 @@ import UIKit
 var equippedCar = "missan"
 var haveLazus = false
 var haveTexla = false
+var upgradesBought = 3
 
 class CarsUpgradeTableViewController: UITableViewController {
     @IBOutlet var mainTable: UITableView!
@@ -175,6 +176,8 @@ class CarsUpgradeTableViewController: UITableViewController {
             equippedCar = "lazus"
             UserDefaults.standard.set(equippedCar, forKey: "equippedCar")
             haveLazus = true
+            upgradesBought += 1
+            UserDefaults.standard.set(upgradesBought, forKey: "upgradesBought")
             UserDefaults.standard.set(haveLazus, forKey: "haveLazus")
             lazusDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
@@ -191,6 +194,8 @@ class CarsUpgradeTableViewController: UITableViewController {
             equippedCar = "texla"
             UserDefaults.standard.set(equippedCar, forKey: "equippedCar")
             haveTexla = true
+            upgradesBought += 1
+            UserDefaults.standard.set(upgradesBought, forKey: "upgradesBought")
             UserDefaults.standard.set(haveTexla, forKey: "haveTexla")
             texlaDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"

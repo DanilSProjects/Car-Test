@@ -43,6 +43,19 @@ class MainMenuViewController: UIViewController {
         haveTurbo = loadedTurbo
         let loadedHybrid = UserDefaults.standard.bool(forKey: "haveHybrid")
         haveHybrid = loadedHybrid
+        let loadedLifetime = UserDefaults.standard.integer(forKey: "lifetimePts")
+        lifetimePts = loadedLifetime
+        let loadedTrashNo = UserDefaults.standard.integer(forKey: "trashNo")
+        trashNo = loadedTrashNo
+        let loadedRecNo = UserDefaults.standard.integer(forKey: "recNo")
+        recNo = loadedRecNo
+        var loadedBoughtUpgrades = UserDefaults.standard.integer(forKey: "upgradesBought")
+        if loadedBoughtUpgrades == 0 {
+            loadedBoughtUpgrades = 3
+        }
+        upgradesBought = loadedBoughtUpgrades
+        let loadedCorrectSwipes = UserDefaults.standard.integer(forKey: "correctSwipes")
+        correctSwipes = loadedCorrectSwipes
     }
     
     func playBackgroundMusic(filename: String) {

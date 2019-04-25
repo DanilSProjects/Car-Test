@@ -1,26 +1,28 @@
 //
-//  UsefulTableViewController.swift
+//  StatsTableViewController.swift
 //  Car Game Test
 //
-//  Created by Daniel on 23/4/19.
+//  Created by Daniel on 25/4/19.
 //  Copyright © 2019 Placeholder Interactive. All rights reserved.
 //
 
 import UIKit
-import SafariServices
-class UsefulTableViewController: UITableViewController, SFSafariViewControllerDelegate {
 
-    // Ask for useful links from team later
-    var usefulLinks = ["nea.gov.sg", "youtube.com", "reddit.com", "newgrounds.com"]
+class StatsTableViewController: UITableViewController {
+
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var trashLabel: UILabel!
+    @IBOutlet weak var recycleLabel: UILabel!
+    @IBOutlet weak var upgradeLabel: UILabel!
+    @IBOutlet weak var minigameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        pointsLabel.text = "\(lifetimePts)"
+        trashLabel.text = "\(trashNo)"
+        recycleLabel.text = "\(recNo)"
+        upgradeLabel.text = "\(upgradesBought)"
+        minigameLabel.text = "\(correctSwipes)"
     }
 
     // MARK: - Table view data source
@@ -32,35 +34,19 @@ class UsefulTableViewController: UITableViewController, SFSafariViewControllerDe
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return usefulLinks.count
-    }
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        controller.dismiss(animated: true, completion: nil)
+        return 5
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "useful", for: indexPath)
-        
-        cell.textLabel?.text = usefulLinks[indexPath.row]
-        cell.textLabel?.textColor = UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0)
-        cell.textLabel?.font = UIFont(name: "Chalkboard SE", size: 20.0)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let url = URL(string: "https://\(usefulLinks[indexPath.row])") else {
-            return
-        }
-        
-        let safariVC = SFSafariViewController(url: url)
-        safariVC.delegate = self
-        present(safariVC, animated: true, completion: nil)
-    }
-    
-    
-    
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

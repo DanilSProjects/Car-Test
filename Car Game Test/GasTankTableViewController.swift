@@ -174,6 +174,8 @@ class GasTankTableViewController: UITableViewController {
             UserDefaults.standard.set(equippedGasTank, forKey: "equippedGasTank")
 
             haveII = true
+            upgradesBought += 1
+            UserDefaults.standard.set(upgradesBought, forKey: "upgradesBought")
             UserDefaults.standard.set(haveII, forKey: "haveII")
             lazusDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"
@@ -191,6 +193,8 @@ class GasTankTableViewController: UITableViewController {
             UserDefaults.standard.set(equippedGasTank, forKey: "equippedGasTank")
 
             haveIII = true
+            upgradesBought += 1
+            UserDefaults.standard.set(upgradesBought, forKey: "upgradesBought")
             UserDefaults.standard.set(haveIII, forKey: "haveIII")
             texlaDesc.text = "OWNED"
             totalPtsLabel.text = "Points:\(totalPts)"

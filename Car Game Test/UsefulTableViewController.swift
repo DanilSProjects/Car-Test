@@ -11,7 +11,7 @@ import SafariServices
 class UsefulTableViewController: UITableViewController, SFSafariViewControllerDelegate {
 
     // Ask for useful links from team later
-    var usefulLinks = ["nea.gov.sg", "youtube.com", "reddit.com", "newgrounds.com"]
+    var usefulLinks = ["nea.gov.sg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

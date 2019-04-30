@@ -45,7 +45,6 @@ class FuelTableViewController: UITableViewController {
             chooseBio.setTitle("NOT ENOUGH", for: .normal)
             chooseBio.backgroundColor = UIColor(red:0.67, green:0.67, blue:0.67, alpha:1.0)
             chooseBio.titleLabel?.font = UIFont(name: "Chalkduster", size: 18)
-            chooseBio.setTitleColor(UIColor(red:0.83, green:0.03, blue:0.02, alpha:1.0), for: .normal)
         }
     }
 

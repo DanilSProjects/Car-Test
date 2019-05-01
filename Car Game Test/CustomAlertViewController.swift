@@ -39,8 +39,10 @@ class CustomAlertViewController: UIViewController {
     }
     @IBAction func uPress(_ sender: Any) {
         performSegue(withIdentifier: "upgradeFromAlert", sender: nil)
+        audioPlayer?.play()
     }
     @IBAction func sPress(_ sender: Any) {
         performSegue(withIdentifier: "settingsFromAlert", sender: nil)
+        audioPlayer?.play()
     }
 }

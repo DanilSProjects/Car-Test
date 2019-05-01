@@ -546,9 +546,11 @@
                                 <string key="text">An educational game created as part of The School's Challenge by students from Pasir Ris Secondary School.
 
 Game programming - Danil Syrov
-Music - Danish Shamil
+Game Music - Danish Shamil
 Art - Thoon Ya Te Thant (Helen)
-Concept - Zhi Jun</string>
+Concept - Zhi Jun
+
+Menu Music - Credits to Kevin Mcleod (incompetech.com) for "Funky Game Loop" </string>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1900,8 +1902,8 @@ Concept - Zhi Jun</string>
         <image name="turbo" width="182.39999389648438" height="159.60000610351562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bQn-sF-f1x"/>
+        <segue reference="JLM-if-Sqm"/>
         <segue reference="gKH-5r-FNo"/>
-        <segue reference="Md5-Za-GKR"/>
+        <segue reference="Owl-EL-Hlc"/>
     </inferredMetricsTieBreakers>
 </document>

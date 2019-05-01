@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var gifView: UIImageView!
     @IBOutlet weak var statsLabel: UILabel!
-    var player: AVAudioPlayer?
+    var pPlayer: AVAudioPlayer?
 
     var pts = 0
     var ptsToIncrease = 0
@@ -205,9 +205,8 @@ class ViewController: UIViewController {
     }
     
     func stopGame() {
-        audioPlayer?.pause()
+        player?.pause()
         playSound()
-        audioPlayer?.play()
         
         totalPts += pts
         lifetimePts += pts
@@ -353,14 +352,14 @@ class ViewController: UIViewController {
             try AVAudioSession.sharedInstance().setActive(true)
             
             /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
-            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            pPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             
             /* iOS 10 and earlier require the following line:
              player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
             
-            guard let player = player else { return }
+            guard let pPlayer = pPlayer else { return }
             
-            player.play()
+            pPlayer.play()
         } catch let error {
             print(error.localizedDescription)
         }

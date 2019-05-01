@@ -7,8 +7,10 @@
 //
 
 import UIKit
-
+import AVFoundation
 var fuelType = 0
+var player: AVAudioPlayer?
+
 class FuelTableViewController: UITableViewController {
 
     @IBOutlet var mainTable: UITableView!
@@ -19,6 +21,7 @@ class FuelTableViewController: UITableViewController {
     @IBOutlet weak var bioPriceLabe: UILabel!
     
     var biofuelPrice = 1000
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +48,15 @@ class FuelTableViewController: UITableViewController {
             chooseBio.setTitle("NOT ENOUGH", for: .normal)
             chooseBio.backgroundColor = UIColor(red:0.67, green:0.67, blue:0.67, alpha:1.0)
             chooseBio.titleLabel?.font = UIFont(name: "Chalkduster", size: 18)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if audioPlayer?.isPlaying == true {
+            audioPlayer?.pause()
+            playBackgroundMusic(filename: "themera.mp3")
+        } else {
+            playBackgroundMusic(filename: "themera.mp3")
         }
     }
 
@@ -112,6 +124,7 @@ class FuelTableViewController: UITableViewController {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
+     
     */
 
     /*
@@ -123,5 +136,19 @@ class FuelTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func playBackgroundMusic(filename: String) {
+        let url = Bundle.main.url(forResource: filename, withExtension: nil)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        do {
+            player = try AVAudioPlayer(contentsOf: newURL)
+            player?.numberOfLoops = -1
+            player?.prepareToPlay()
+            player?.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
+    }
 }

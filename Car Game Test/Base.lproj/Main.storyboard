@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo4-d2-oBY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swipey Road" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo4-d2-oBY">
                                 <rect key="frame" x="0.0" y="85" width="375" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="58"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="53"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -488,7 +488,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdx-N4-IkK">
                                 <rect key="frame" x="39" y="-15" width="320" height="292"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Hello and welcome to Car Game! The objective of this game is to get your car as far as possible without running out of fuel. Meanwhile you will have to swipe items on the roadside into the recycling side or trash side. Try it now! Swipe the cardboard box on the road to the recycling side.</string>
+                                <string key="text">Hello and welcome to Swipey Road! The objective of this game is to get your car as far as possible without running out of fuel. Meanwhile you will have to swipe items on the roadside into the recycling side or trash side. Try it now! Swipe the cardboard box on the road to the recycling side.</string>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1902,8 +1902,8 @@ Menu Music - Credits to Kevin Mcleod (incompetech.com) for "Funky Game Loop" </s
         <image name="turbo" width="182.39999389648438" height="159.60000610351562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JLM-if-Sqm"/>
+        <segue reference="bQn-sF-f1x"/>
         <segue reference="gKH-5r-FNo"/>
-        <segue reference="Owl-EL-Hlc"/>
+        <segue reference="IwR-Ss-Ofq"/>
     </inferredMetricsTieBreakers>
 </document>
